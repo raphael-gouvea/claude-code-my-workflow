@@ -1,0 +1,115 @@
+---
+title: "Plano de Ensino"
+---
+
+[**Clique aqui**](/documents/plano_ensino_pdf.pdf) **para fazer download da versão em PDF.**
+
+## Informações Gerais
+
+**Professor:** Raphael Gouvea
+
+**Contato:** raphael.gouvea\@professores.ibmec.edu.br (e-mails serão respondidos em até 2 dias úteis)
+
+**Horário das aulas:** Segundas e Quartas de 09:50 às 11:40
+
+**Local:** Sala 3A (às segundas) e Sala 6B (às quartas)
+
+**Acesso ao material da disciplina: **<https://raphaelgouvea.com/> 
+
+## Aprendizado Esperado
+
+O curso tem como objetivo introduzir os alunos às principais técnicas de inferência causal utilizadas em economia, com ênfase na identificação e avaliação de efeitos causais em contextos empíricos.
+
+Ao final do curso, espera-se que os estudantes compreendam os fundamentos da inferência causal, saibam formular hipóteses causais e aplicar métodos como experimentos aleatórios, diferenças-em-diferenças, variáveis instrumentais, regressões descontínuas dentre outros.
+
+Além da base teórica, o curso contará com um componente prático no qual os alunos aprenderão a implementar essas técnicas utilizando a linguagem de programação R, desenvolvendo habilidades para análise de dados e interpretação crítica de resultados empíricos.
+
+## Integridade Acadêmica
+
+Espera-se integridade absoluta do estudante em todas as atividades acadêmicas. Integridade implica adesão firme a um conjunto de valores, sendo os mais essenciais à comunidade acadêmica baseados no conceito de honestidade em relação ao próprio esforço intelectual e ao dos outros, bem como na busca livre e aberta pelo conhecimento e na discussão em sala de aula. A integridade acadêmica é esperada não apenas em situações formais da disciplina, mas em todos os relacionamentos e interações vinculados ao processo educacional. A entrega de um trabalho por parte de um estudante indica que o trabalho é de sua autoria e toda assistência externa deve ser devidamente reconhecida.
+
+## Política de Uso de Telas
+
+Há diversas pesquisas convincentes (veja, por exemplo, [aqui](/documents/LapBan_SA.pdf), [aqui](/documents/LapBan_NYT.pdf), [aqui](/documents/LapBan_NewYorker.pdf) ou [aqui](/documents/LapBan_NPR.pdf)) mostrando que estudantes universitários aprendem menos e obtêm notas piores quando utilizam computadores, tablets ou celulares durante as aulas, e que o uso de computadores por um estudante também prejudica a aprendizagem dos colegas ao redor. Minha experiência pessoal confirma isso. Esses efeitos negativos ocorrem mesmo quando os computadores são utilizados exclusivamente para anotações (o que raramente acontece). Diante desse cenário, diversas universidades de ponta tem adotado políticas de proibição ou restrição do uso de tela (veja, por exemplo, [aqui](/documents/LapBan_Brazil.pdf) ou [aqui](/documents/LapBan_Folha.pdf)).
+
+Assim, a política de uso de telas para este curso é que **não será permitido o uso de computadores, tablets, celulares e quaisquer outros dispositivos similares durante as aulas expositivas!** Diferentemente das aulas expositivas, o uso de computadores (mas não de celulares!) será obrigatório nas aulas práticas, pois você irá precisar dele para realização das atividades. Se você tiver um motivo válido para utilizar seu computador ou tablet em sala (por exemplo, uma deficiência de aprendizagem), podemos discutir uma exceção.
+
+## Política de uso de Inteligência Artificial
+
+### IA, Programação e o Processo de Aprendizado
+
+Ferramentas de IA generativa (como ChatGPT e GitHub Copilot) tornaram-se parte do ecossistema de programação. No entanto, o uso dessas ferramentas na nossa disciplina deve seguir a lógica de desenvolvimento de competência. Imagine a IA como um estagiário muito rápido, mas ocasionalmente descuidado e sem profundidade teórica. Você é o editor-chefe. Se você não souber como estruturar sua análise e ter conhecimentos gerais sobre sintaxe, você não será capaz de revisar o trabalho da IA. **No final, você é o único responsável por cada linha de código e cada interpretação no seu trabalho.** Se você utilizar IA para auxiliar na programação, você deve declarar isso explicitamente no seu relatório, detalhando como a ferramenta foi utilizada. O uso não declarado será tratado sob a política de integridade acadêmica.
+
+**Recomendação Prática:** Tente resolver os problemas sozinho primeiro. Se travar, use a IA para entender o erro, não para copiar a solução. O verdadeiro aprendizado em R acontece na transição entre o erro e a solução compreendida.
+
+### IA, Produção de Textos e o Processo de Aprendizado
+
+O uso de ferramentas de IA para a redação integral ou parcial de textos (interpretações de resultados e relatórios) é **estritamente proibido**. Escrever não é apenas o ato de relatar um resultado, mas sim o processo fundamental de organizar o pensamento causal e testar a lógica dos seus argumentos. Delegar a escrita à IA significa abdicar da principal ferramenta de aprendizado da disciplina. Textos que apresentem as características típicas de geração automatizada (como generalizações vagas, falta de precisão teórica ou estruturas circulares) serão avaliados com rigor, uma vez que o objetivo das avaliações é medir a sua capacidade de articular ideias e não a habilidade de um algoritmo em prever a próxima palavra provável.
+
+
+## Suporte ao Aluno
+
+O Ibmec é comprometido com a equidade e a inclusão dos nossos alunos. Em caso de dificuldades acadêmicas, emocionais ou de adaptação, os estudantes podem contar com o apoio do setor CASA, que oferece atendimento personalizado ao longo da trajetória universitária. Para mais informações: <https://blog.ibmec.br/noticias/suporte-ao-aluno-com-o-setor-casa-ibmec-insights/>
+
+## Avaliação
+
+As avaliações de aprendizagem do estudante serão expressas por meio das seguintes notas:
+
+* **Avaliação Parcial 1 (AP1):** avaliação individual, realizada em sala de aula e sem consulta (10 pts).
+* **Avaliação Parcial 2 (AP2):** avaliação individual, realizada em sala de aula e sem consulta (10 pts).
+* **Avaliação Continuada (AC):** avaliação individual, composta por um conjunto de atividades práticas em R (10 pts).
+* **Avaliação Substitutiva (AS):** avaliação individual, realizada em sala de aula e sem consulta (10 pts). A AS poderá cobrir todo o conteúdo do semestre.
+
+A nota final (NF) do aluno equivale à média ponderada das avaliações parciais AP1, AP2 e AC, com os pesos de 40%, 40% e 20%, respectivamente, ou seja:
+
+$$NF = (0,4 \times AP1) + (0,4 \times AP2) + (0,2 \times AC)$$
+
+Respeitado o limite mínimo de **frequência de 75%**, será considerado aprovado o aluno que obtiver NF igual ou superior a **7 (sete)**.
+
+O aluno poderá se submeter a uma **Avaliação Substitutiva (AS)** nas seguintes situações:
+
+I. Caso tenha ficado impossibilitado de realizar uma das Avaliações Parciais;  
+II. Caso tenha obtido NF menor do que 7 (sete);  
+III. Caso esteja aprovado, mas deseje aumentar sua NF.
+
+Para os casos previstos no inciso I, a nota da AS substituirá a nota da Avaliação Parcial não realizada. Para os casos previstos nos incisos II e III, a nota da AS substituirá a nota da AP1 ou a da AP2, a que for menor.
+
+**Atenção:** Caso queria aumentar a nota obtida na AC, o aluno poderá realizar um projeto final opcional. A nota do projeto substituirá a nota da AC caso esta seja menor do que obtido na avaliação do projeto.
+
+
+[**Clique aqui**](/documents/AP1_Microeconometria_2025_2.pdf) **para ver a AP 1 semestre 2025.2**
+
+
+## Bibliografia
+
+### Bibliografia Básica
+
+- Stock, James H., and M. Watson. [Introduction to econometrics](https://www.sea-stat.com/wp-content/uploads/2020/08/James-H.-Stock-Mark-W.-Watson-Introduction-to-Econometrics-Global-Edition-Pearson-Education-Limited-2020.pdf). Fourth edition, global edition. Pearson. 2020
+
+- Stock, James H., e M. Watson. Econometria. 1a Edição. Pearson. 2004 (_disponível na biblioteca_).
+
+**Observação:**  A 1a Edição pode ser utilizada pelo estudante sem maiores consequências, uma vez que os conteúdos introduzidos na versão mais atual serão discutidos em sala e sinalizados pelo professor. 
+
+-   Angrist, D. J., Pischke, J. [Mastering metrics: the path from cause to effect](https://www.masteringmetrics.com/). 1st Edition. Princeton University Press. 2015.
+
+
+### Bibliografia Complementar
+
+-   Angrist, D. J., Pischke, J. [Mostly Harmless Econometrics: An Empiricist's Companion](https://www.mostlyharmlesseconometrics.com/). 1st Edition. Princeton University Press. 2009.
+
+-   Cunningham, S. [Causal Inference: the mixtape](https://mixtape.scunning.com/). Yale University Press. 1st Edition. 2021.
+
+- Huntington-Klein, N. [The Effect: An Introduction to Research Design and Causality](https://theeffectbook.net/index.html). Chapman & Hall. 2nd Edition. 2025. 
+
+## Datas importantes
+
+-   **9 de fevereiro:** Início do semestre letivo
+-   **16 e 18 de fevereiro:** Carnaval
+-   **13 de abril:** Avaliação Parcial 1 (AP1)
+-   **20 de abril:** Recesso feriado de Tiradentes
+-   **7 de maio:** Teste de progresso
+-   **15 de junho**: Avaliação Parcial 2 (AP2)
+-   **29 de junho**: Avaliação Substitutiva (AS)
+-   **3 de julho**: Conclusão do período letivo
+
+[**Clique aqui**](/documents/Calendário%20Acadêmico_2026_1_V3.pdf) **para calendário acadêmico completo do IBMEC.**

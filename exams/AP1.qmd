@@ -1,0 +1,40 @@
+---
+title: "Avaliação Parcial I - 2026.1"
+subtitle: "Microeconometria - IBM0288"
+author: "Prof. Raphael Gouvea"
+date: last-modified
+date-format: "13/04/2026"
+format: 
+  pdf:
+    documentclass: article
+    papersize: a4
+    babel-lang: pt
+    geometry:
+      - margin=1in
+    number-sections: false
+    colorlinks: true
+    fontsize: 11pt
+---
+
+## Instruções
+
+1. A prova é individual e não é permitido a utilização de material de consulta.
+
+2. Não é permitido o uso do celular ou computadores. Caso necessite ir ao banheiro, deixe seu celular em cima da mesa desligado ou em modo avião.
+
+---
+
+## Questão 1: 1 ponto
+
+Responda Falso ou Verdadeiro para as afirmações abaixo. Justifique brevemente sua escolha. Respostas sem justificativa receberão nota zero.
+
+(a) Seja $X_i$ uma variável *dummy* de tratamento cuja atribuição foi feita de modo aleatório. O resultado de interesse é $Y_i$. O coeficiente $\hat{\beta_1}$ obtido por MQO a partir da especificação $Y_i = \beta_0 + \beta_1 X_i + u_i$ **não** estima o efeito tratamento médio pois a regressão sofre de viés de variável omitida. \
+
+(b) Se $Z_i$ for uma variável omitida no modelo de regressão $Y_i = \beta_0 + \beta_1 X_{i}+u_i$, sua omissão **não** gerará viés de variável omitida se $corr(Y_i,Z_i) = 0$. \
+
+(c) Suponha que você tenha uma base de dados em painel em que observa 10 entidades em 2 períodos de tempo, ou seja $n=10$ e $T=2$. Seja $Y_{it}$ a variável dependente e $X_{it}$ a variável de tratatamento de interesse, sendo o modelo populacional dado por $Y_{it} = \alpha_i + \beta_1 X_{it} + u_{it}$, ou seja, um modelo de efeito fixo. A regressão $\Delta Y_{it} = \beta_0 + \beta_1 \Delta X_{it} + u_{it}$ **não** é apropariada para estimar o modelo populacional, ou seja, as duas especificações **não** são equivalentes. 
+
+(d) Suponha que você tenha uma base de dados em painel em que observa 10 entidades em 2 períodos de tempo, ou seja $n=10$ e $T=3$. Seja $Y_{it}$ a variável dependente e $X_{it}$ a variável de tratatamento de interesse, sendo o modelo populacional dado por $Y_{it} = \alpha_i + \lambda_t + \beta_1 X_{it} + u_{it}$. Ao estimar o modelo utilizando dummies de entidade e de tempo, o modelo terá 14 variáveis dependentes. 
+
+
+## Questão 2: 3 pontos

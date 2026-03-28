@@ -1,0 +1,19 @@
+---
+title: "Seção 6"
+subtitle: "Variáveis Instrumentais"
+---
+
+::: callout-important
+O uso de celulares e computadores durante as aulas expositivas não é permitido.
+:::
+
+::: callout-note
+Conteúdo em preparação. 
+:::
+
+
+
+::: {style="font-size: 0.875em;"}
+Volte para [Cronograma](/ "Course schedule") ⏎
+:::
+

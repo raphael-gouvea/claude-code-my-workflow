@@ -1,0 +1,81 @@
+---
+title: "Aula Prática - Experimentos Aleatórios"
+reference-location: margin
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+
+
+## O que é um código replicável?
+
+Um código replicável é um código que permite que outra pessoa reproduza exatamente os mesmos resultados apresentados em um trabalho, utilizando os mesmos dados e seguindo os mesmos passos. Em microeconometria — especialmente em pesquisas que utilizam dados observacionais ou experimentos — a replicabilidade é um princípio fundamental da prática científica. Ela garante **transparência, confiabilidade e verificabilidade** dos resultados empíricos.
+
+A seguir seguem algumas característias principais de um código replicável.
+
+1. **Automatização completa da análise**
+
+Um código replicável deve executar automaticamente todas as etapas da análise empírica. Isso inclui a importação dos dados, a limpeza e tratamento da base, a construção de variáveis, a estimação dos modelos econométricos e a geração das tabelas e gráficos apresentados no trabalho. Idealmente, todos os resultados do estudo devem ser produzidos diretamente pelo código.
+
+2. **Independência de manipulações manuais**
+
+Um princípio central da replicabilidade é evitar etapas realizadas manualmente fora do código. Alterações em planilhas, exclusão manual de observações ou ajustes feitos diretamente em softwares de edição comprometem a replicação. Todas as transformações e decisões sobre os dados devem estar explicitamente programadas.
+
+3. **Organização clara da estrutura de arquivos**
+
+Projetos replicáveis normalmente apresentam uma estrutura de pastas organizada, separando dados, códigos e resultados. Essa organização facilita a compreensão do fluxo da análise e permite que outros pesquisadores encontrem rapidamente os arquivos necessários para reproduzir os resultados.
+
+4. **Uso de comentários explicativos no código**
+
+O código deve conter comentários que explicam as principais etapas da análise. Esses comentários ajudam a entender o objetivo de cada bloco de código, a construção das variáveis e as escolhas metodológicas realizadas durante o processo empírico.
+
+5. **Reprodutibilidade dos resultados**
+
+Executar o código do início ao fim deve gerar sempre os mesmos resultados, desde que os dados permaneçam inalterados. Para isso, é importante controlar procedimentos aleatórios para que sejam reprodutíveis e garantir que o ambiente computacional necessário esteja claramente especificado.
+
+6. **Código executável do início ao fim**
+
+Um script replicável deve poder ser executado integralmente, sem exigir que o usuário rode trechos isolados ou faça ajustes no ambiente de trabalho. O código deve carregar os pacotes necessários, importar os dados e gerar os resultados de forma contínua e sem erros.
+
+7. **Documentação dos dados**
+
+Sempre que possível, um projeto replicável deve incluir documentação sobre os dados utilizados, como descrições das bases, definições das variáveis e instruções sobre como obter os dados quando eles não puderem ser distribuídos diretamente. Essa documentação facilita a compreensão e a reutilização da base de dados.
+
+Antes de prosseguirmos, vamos fazer um teste utilizando `Quarto`. Lembrando que caso queiram aprofundar ou revisar o material após a aula, veja o vídeo abaixo:
+
+{{< video https://www.youtube.com/watch?v=_f3latmOhew >}}
+
+
+## Discussão
+
+Existe discriminação no mercado de trabalho? Como você poderia tentar responder a essa questão utilizando um experimento aleatório? Sua proposta seria éticamente aceitável? Economicamente viável?
+
+## Exercício E13.1 Stock e Watson (4a Edição)
+
+Na aula de hoje, iremos fazer o exerício empírico 13.1 do livro de Stock e Watson que é baseado no artigo no artigo [Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination.](/documents/Bertrand_Mullainathan_2004.pdf). No site do livro, você encontrará o arquivo [Names](/labs/Names/Names.xlsx), que contém o a base de dados e o arquivo [Names_Description](/labs/Names/Names_Description.pdf) com a descrição das variáveis. 
+
+
+Um empregador em potencial recebe dois currículos: um de um candidato branco e um semelhante de um candidato negro. O empregador tem maior probabilidade de ligar de volta para o candidato branco para agendar uma entrevista? Marianne Bertrand e Sendhil Mullainathan realizaram um experimento  aleatório para responder a essa pergunta.
+
+Como a informação sobre raça normalmente não é incluída em currículos, eles diferenciaram os currículos com base em “nomes que soam como nomes de pessoas brancas” (como Emily Walsh ou Gregory Baker) e “nomes que soam como nomes de pessoas afro-americanas” (como Lakisha Washington ou Jamal Jones).
+
+Foi criada uma grande coleção de currículos fictícios e a “raça” presumida (com base no “som” do nome) foi **atribuída aleatoriamente** a cada currículo. Esses currículos foram enviados a empregadores potenciais para observar quais deles geravam uma ligação telefônica (um *callback*) por parte do empregador.
+
+a. Defina a taxa de retorno (*callback rate*) como a fração de currículos que geram uma ligação telefônica do empregador em potencial. Qual foi a taxa de retorno de chamada para brancos? E para afro-americanos? Construa um intervalo de confiança de 95% para a diferença entre as taxas de retorno. A diferença é estatisticamente significativa? Ela é grande em termos práticos no mundo real?
+
+b. O diferencial na taxa de retorno entre afro-americanos e brancos é diferente para homens em comparação com mulheres?
+
+c. Qual é a diferença nas taxas de retorno entre currículos de alta qualidade e baixa qualidade? Qual é a diferença nas taxas entre currículos de alta e baixa qualidade para candidatos brancos? E para candidatos afro-americanos? Existe uma diferença significativa nessa diferença entre alta e baixa qualidade para brancos em comparação com afro-americanos?
+
+d. Os autores do estudo afirmam que a raça foi atribuída aleatoriamente aos currículos. Existe alguma evidência de atribuição não aleatória?
+
+
+
+## Recursos adicionais para aprofundar e praticar (opcional)
+
+-   [R para Ciência de Dados (2ª edição)](https://pt.r4ds.hadley.nz/)
+
+-   [Introduction to Creating gt Tables](https://gt.rstudio.com/articles/gt.html)
+
+*Observação*: Existem vários pacotes que permitem a codificação de tabelas de resultado formatadas no R. O pacote `gt` é um dos mais complexos. A códificação de tabelas é uma ótima atividade para receber ajuda do seu estagiário IA.

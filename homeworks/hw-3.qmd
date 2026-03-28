@@ -1,0 +1,33 @@
+---
+title: "Exercício 3 - AC"
+reference-location: margin
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+
+
+## Data de Entrega: 30/03
+
+### Lembretes
+
+::: callout-important
+## Integridade Acadêmica
+Espera-se integridade absoluta do estudante em todas as atividades acadêmicas. Integridade implica adesão firme a um conjunto de valores, sendo os mais essenciais à comunidade acadêmica baseados no conceito de honestidade em relação ao próprio esforço intelectual e ao dos outros, bem como na busca livre e aberta pelo conhecimento e na discussão em sala de aula. A integridade acadêmica é esperada não apenas em situações formais da disciplina, mas em todos os relacionamentos e interações vinculados ao processo educacional. A entrega de um trabalho por parte de um estudante indica que o trabalho é de sua autoria e toda assistência externa deve ser devidamente reconhecida.
+:::
+
+::: callout-important
+## IA, Programação e o Processo de Aprendizado
+
+Ferramentas de IA generativa (como ChatGPT e GitHub Copilot) tornaram-se parte do ecossistema de programação. No entanto, o uso dessas ferramentas na nossa disciplina deve seguir a lógica de desenvolvimento de competência. Imagine a IA como um estagiário muito rápido, mas ocasionalmente descuidado e sem profundidade teórica. Você é o editor-chefe. Se você não souber como estruturar sua análise e ter conhecimentos gerais sobre sintaxe, você não será capaz de revisar o trabalho da IA. **No final, você é o único responsável por cada linha de código e cada interpretação no seu trabalho.** Se você utilizar IA para auxiliar na programação, você deve declarar isso explicitamente no seu relatório, detalhando como a ferramenta foi utilizada. O uso não declarado será tratado sob a política de integridade acadêmica.
+:::
+
+### Regressões: questão de prova
+
+Resolva a questão 3 da [AP1](/documents/AP1_Microeconometria_2025_2.pdf) do semestre passado.
+
+### Regressões: aula prática
+
+A atividade prática dessa seção será iniciada em sala e finalizada em casa. Veja a atividade na página da [aula prática](/labs/lab-3.html)
+

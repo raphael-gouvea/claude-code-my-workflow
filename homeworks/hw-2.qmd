@@ -1,0 +1,68 @@
+---
+title: "Exercício 2 - AC"
+reference-location: margin
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+
+
+## Data de Entrega: 16/03
+
+### Lembretes
+
+::: callout-important
+## Integridade Acadêmica
+Espera-se integridade absoluta do estudante em todas as atividades acadêmicas. Integridade implica adesão firme a um conjunto de valores, sendo os mais essenciais à comunidade acadêmica baseados no conceito de honestidade em relação ao próprio esforço intelectual e ao dos outros, bem como na busca livre e aberta pelo conhecimento e na discussão em sala de aula. A integridade acadêmica é esperada não apenas em situações formais da disciplina, mas em todos os relacionamentos e interações vinculados ao processo educacional. A entrega de um trabalho por parte de um estudante indica que o trabalho é de sua autoria e toda assistência externa deve ser devidamente reconhecida.
+:::
+
+::: callout-important
+## IA, Programação e o Processo de Aprendizado
+
+Ferramentas de IA generativa (como ChatGPT e GitHub Copilot) tornaram-se parte do ecossistema de programação. No entanto, o uso dessas ferramentas na nossa disciplina deve seguir a lógica de desenvolvimento de competência. Imagine a IA como um estagiário muito rápido, mas ocasionalmente descuidado e sem profundidade teórica. Você é o editor-chefe. Se você não souber como estruturar sua análise e ter conhecimentos gerais sobre sintaxe, você não será capaz de revisar o trabalho da IA. **No final, você é o único responsável por cada linha de código e cada interpretação no seu trabalho.** Se você utilizar IA para auxiliar na programação, você deve declarar isso explicitamente no seu relatório, detalhando como a ferramenta foi utilizada. O uso não declarado será tratado sob a política de integridade acadêmica.
+:::
+
+### Resultados Potenciais e Efeitos Tratamento
+
+1. Considere um cenário de avaliação de impacto em que temos interesse em estudar os efeitos de uma intervenção sobre uma variável de resultado.
+    
+    a. Defina a variável de resultado $Y_i$ como função da variável indicadora de tratamento $D_i \in \{0,1\}$, utilizando a notação de resultados potenciais.
+    
+    b. Formalize o efeito de tratamento individual, isto é, a diferença entre o resultado potencial sob tratamento e o resultado potencial sob controle para um indivíduo $i$.
+
+2. Defina e apresente a formulação matemática dos seguintes conceitos em termos de esperança condicional:
+
+    a. O efeito médio do tratamento (ATE).
+
+    b. O efeito médio do tratamento sobre os tratados (ATT).
+
+    c. O efeito médio do tratamento sobre os não tratados (ATU).
+
+*Observação:* use expressões como $E[\cdot]$ e $E[\cdot \mid \cdot]$ onde apropriado.
+
+3. Mostre o que ocorre ao utilizar a diferença entre as médias observadas dos grupos de tratamento ($D_i=1$) e de controle ($D_i=0$) como estimador do efeito do tratamento.
+
+    a. Derive $E[Y_i \mid D_i=1] \;-\; E[Y_i \mid D_i=0]$ e mostre que pode ser decomposto em dois termos: $ATT$ e viés de seleção.
+
+4. A *Lei da Expectativa Total* afirma que, para uma variável de interesse $X$ e uma partição dada por $D_i \in \{0,1\}$, vale:
+$$E[X] \;=\; \Pr(D_i=1)\,E[X \mid D_i=1] \;+\; \Pr(D_i=0)\,E[X \mid D_i=0].$$
+    
+    a. Utilize este resultado para mostrar que o efeito médio do tratamento (ATE) pode ser escrito como: $$ATE = E[Y_i(1) - Y_i(0)] = \Pr(D_i=1)ATT + \Pr(D_i=0) ATU.$$
+    
+    b. Interprete a equação obtida. *(Dica: como $D_i$ é uma varíável dummy, as probabilidades podem ser interpretadas como proporções.)*
+
+5. Com base em (3) e (4), responda:
+    
+    a. Em que condição a diferença de médias entre grupos de tratamento e controle coincide exatamente com o efeito médio do tratamento (ATE)?
+
+
+### Experimentos aleatórios
+
+A atividade prática dessa seção será iniciada em sala e finalizada em casa. A atividade em si é a o Exercício aplicado E13.1 do livro de Stock e Watson descrito na [aula prática](/labs/lab-2.html). Antes porém de prosseguir, assista ao vídeo abaixo sobre como fazer a leitura de tabelas e resultados de experimentos aleatórios. Utilize o vídeo como fonte de informação para preparar a tabela de resultados e fazer a análise dos dados. 
+
+{{< video https://www.youtube.com/watch?v=s-_3s3OMeqs >}}
+
+**Observação**: O vídeo possui legendas em português. Entretanto, note a a tradução de *dummy variable* como *variável fictícia* é uma tradução errada. Não há nada de "fictício" em uma variável *dummy*, ela apresenta valores reais das observações sendo que sua única característica diferenciada é que esse tipo de variável recebe apenas os valores 1 e 0.  
+
+

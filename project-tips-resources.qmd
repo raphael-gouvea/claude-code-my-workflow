@@ -1,0 +1,15 @@
+---
+title: "Dicas e material de apoio"
+---
+
+
+
+::: callout-note
+Conteúdo em preparação. 
+:::
+
+
+
+::: {style="font-size: 0.875em;"}
+Volte para [Cronograma](/ "Course schedule") ⏎
+:::

@@ -1,0 +1,57 @@
+---
+title: "Template Quarto para realização de atividades e trabalho"
+author: "Nome do aluno"
+font-size: 12pt
+spacing: double
+format: 
+  pdf:
+    babel-lang: pt
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+
+# Exercício E13.1 Stock e Watson (4a Edição)
+
+## Descrição da atividade
+
+Na aula de hoje, iremos fazer o exerício empírico 13.1 do livro de Stock e Watson que é baseado no artigo no artigo [Are Emily and Greg More Employable Than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination.](/documents/Bertrand_Mullainathan_2004.pdf). No site do livro, você encontrará o arquivo [Names](/labs/Names/Names.xlsx), que contém o a base de dados e o arquivo [Names_Description](/labs/Names/Names_Description.pdf) com a descrição das variáveis. 
+
+
+Um empregador em potencial recebe dois currículos: um de um candidato branco e um semelhante de um candidato negro. O empregador tem maior probabilidade de ligar de volta para o candidato branco para agendar uma entrevista? Marianne Bertrand e Sendhil Mullainathan realizaram um experimento  aleatório para responder a essa pergunta.
+
+Como a informação sobre raça normalmente não é incluída em currículos, eles diferenciaram os currículos com base em “nomes que soam como nomes de pessoas brancas” (como Emily Walsh ou Gregory Baker) e “nomes que soam como nomes de pessoas afro-americanas” (como Lakisha Washington ou Jamal Jones).
+
+Foi criada uma grande coleção de currículos fictícios e a “raça” presumida (com base no “som” do nome) foi **atribuída aleatoriamente** a cada currículo. Esses currículos foram enviados a empregadores potenciais para observar quais deles geravam uma ligação telefônica (um *callback*) por parte do empregador.
+
+```{r}
+# Insira aqui o código para chamar todas as bibliotecas necessárias e importar os dados para o R
+```
+
+## Responda às seguintes questões
+
+a. Defina a taxa de retorno (*callback rate*) como a fração de currículos que geram uma ligação telefônica do empregador em potencial. Qual foi a taxa de retorno de chamada para brancos? E para afro-americanos? Construa um intervalo de confiança de 95% para a diferença entre as taxas de retorno. A diferença é estatisticamente significativa? Ela é grande em termos práticos no mundo real?
+
+```{r}
+# Insira aqui o código para responder a pergunta
+```
+
+
+b. O diferencial na taxa de retorno entre afro-americanos e brancos é diferente para homens em comparação com mulheres?
+
+```{r}
+# Insira aqui o código para responder a pergunta
+```
+
+c. Qual é a diferença nas taxas de retorno entre currículos de alta qualidade e baixa qualidade? Qual é a diferença nas taxas entre currículos de alta e baixa qualidade para candidatos brancos? E para candidatos afro-americanos? Existe uma diferença significativa nessa diferença entre alta e baixa qualidade para brancos em comparação com afro-americanos?
+
+```{r}
+# Insira aqui o código para responder a pergunta
+```
+
+d. Os autores do estudo afirmam que a raça foi atribuída aleatoriamente aos currículos. Existe alguma evidência de atribuição não aleatória?
+
+```{r}
+# Insira aqui o código para responder a pergunta
+```

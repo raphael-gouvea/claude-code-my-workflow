@@ -1,0 +1,46 @@
+---
+title: "Seção 3"
+subtitle: "Regressão"
+---
+
+::: callout-important
+O uso de celulares e computadores durante as aulas expositivas não é permitido.
+:::
+
+## Preparação {#prepare}
+
+### Aula 5: Inferência causal baseada em regressões
+
+📖 Leituras principais:
+
+Capítulo 4 e 5 de Stock e Watson. [Introduction to econometrics](https://www.sea-stat.com/wp-content/uploads/2020/08/James-H.-Stock-Mark-W.-Watson-Introduction-to-Econometrics-Global-Edition-Pearson-Education-Limited-2020.pdf). 
+
+**Observação**: Na 1a Edição de Stock e Watson, todo o conteúdo é apresentado no capítulo 4.
+
+Capítulo 2 de Angrist e Pischke. [Mastering metrics: the path from cause to effect](https://www.masteringmetrics.com/).
+
+### Aula 6: Viés de variável omitida
+
+📖 Leituras principais:
+
+Capítulo 6 e 7 de Stock e Watson. [Introduction to econometrics](https://www.sea-stat.com/wp-content/uploads/2020/08/James-H.-Stock-Mark-W.-Watson-Introduction-to-Econometrics-Global-Edition-Pearson-Education-Limited-2020.pdf). 
+
+**Observação**: Na 1a Edição de Stock e Watson, todo o conteúdo é apresentado no capítulo 5.
+
+Capítulo 2 e Seção 6.1 de Angrist e Pischke. [Mastering metrics: the path from cause to effect](https://www.masteringmetrics.com/).
+
+
+ 
+## Conteúdo das aulas
+
+💻 [Aula 5 - Inferência causal baseada em regressões](/slides/lec-5.html)
+
+💻 [Aula 6 - Viés de variável omitida](/slides/lec-6.html)
+
+
+⌨️ [Aula Prática](/labs/lab-3.html)
+
+
+::: {style="font-size: 0.875em;"}
+Volte para [Cronograma](/ "Course schedule") ⏎
+:::

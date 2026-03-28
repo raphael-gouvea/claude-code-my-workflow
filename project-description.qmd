@@ -1,0 +1,89 @@
+---
+title: "Instruções"
+---
+
+::: callout-important
+## Datas Importantes
+
+1. Definição da pergunta, método e base de dados: até 29/05
+
+2. Entrega do projeto: até 29/06.
+:::
+
+## 1. Objetivo
+
+O objetivo deste trabalho é permitir que o(a) aluno(a) conduza uma análise empírica completa, aplicando as ferramentas estudadas ao longo do curso para **responder a uma pergunta de pesquisa** por meio de **um único método econométrico de inferência causal**.  
+
+O trabalho deve demonstrar a capacidade de:
+
+- formular uma **pergunta de pesquisa clara e motivada**;
+- aplicar um **método adequado** (entre os estudados na disciplina);
+- coletar, tratar e analisar dados em **R**;
+- estimar e interpretar resultados de forma reprodutível em **Quarto**;
+- discutir implicações e limitações dos achados.
+
+## 2. Formato e entrega
+
+- O trabalho deve ser elaborado **em R e Quarto (.qmd)**.  
+- O(a) aluno(a) deverá entregar **dois arquivos obrigatórios**:  
+  1. O **PDF final** gerado pelo Quarto;  
+  2. O **arquivo .qmd** (código-fonte) totalmente funcional, capaz de reproduzir integralmente o PDF.  
+
+**Extensão:** entre **5 e 7 páginas**,excluindo referências e apêndices. Tabelas e gráficos devem ser inseridas nos apêndices.  
+
+**Formatação:** Utilize o [Template Trabalho Final](/documents/Template_Trabalho_Final.pdf), já estruturado com as seções necessárias, exemplos de código e comentários orientativos. O uso desse modelo é **fortemente recomendado** para garantir padronização e reprodutibilidade. Faça também download do arquivo [references.bib](/documents/references.bib) para facilitar a elaboração das referências bibliográficas.
+
+As figuras e tabelas devem ser **geradas diretamente pelo R** usando pacotes como `ggplot2`, `modelsummary`, `gt`, `broom`, etc.  
+
+O arquivo deve ser **reproduzível**: todos os pacotes, caminhos e etapas de tratamento de dados devem estar documentados e comentados.
+
+
+## 3. Estrutura sugerida
+
+| Seção | Conteúdo esperado |
+|-------|-------------------|
+| **1. Introdução / Motivação** | Apresentar o tema, a pergunta de pesquisa e sua relevância empírica ou teórica. |
+| **2. Fundamentação teórica / revisão de literatura** | Breve revisão de estudos que abordam questões semelhantes; destaque qual lacuna ou hipótese o seu trabalho busca explorar. |
+| **3. Dados e metodologia** | Descrição detalhada da base de dados (fonte, período, variáveis), critérios de tratamento e limpeza, e explicação do método utilizado. Deve incluir a **especificação econométrica** (ou estatística) principal, com justificativa das variáveis incluídas. |
+| **4. Resultados principais** | Apresente uma **tabela principal** com a **especificação base** e variações que sustentem a interpretação causal dos resultados (por exemplo, inclusão de controles adicionais, efeitos fixos ou diferentes amostras). Inclua também um **gráfico que represente visualmente o resultado principal** — o tipo de gráfico e o conteúdo devem ser adequados ao método utilizado. |
+| **5. Discussão e limitações** | Discuta a robustez dos resultados, possíveis vieses (variável omitida, endogeneidade, erros de medida, seleção) e como suas escolhas ajudam a defender a interpretação causal. |
+| **6. Conclusão** | Retome a pergunta de pesquisa e apresente a resposta com base nos resultados obtidos. Indique limitações e possíveis extensões. |
+| **7. Referências** | Liste todas as fontes bibliográficas e bases de dados utilizadas (autor-ano, padrão consistente). |
+
+
+## 4. Regras sobre o método
+
+- O trabalho deverá **utilizar apenas um dos métodos** discutidos ao longo da disciplina.  
+- A escolha do método deve ser **coerente com a pergunta de pesquisa** e **justificada** na seção metodológica.  
+
+## 5. Uso de inteligência artificial (IA)
+
+O uso de ferramentas de inteligência artificial (como ChatGPT, Copilot, Gemini, Claude, etc.) **é permitido apenas para tarefas técnicas específicas**, como:
+
+- auxílio na **limpeza e transformação de dados**;  
+- **debugging de código**;  
+- sugestões de **sintaxe R ou Quarto**;  
+- **explicações conceituais pontuais**.
+
+### Regras:
+- Qualquer uso de IA deve ser **explicitamente indicado no código** com comentário indicando a ferramento utilizada. Por exemplo, "# Código adaptado com auxílio de IA (ChatGPT, 2025)"
+
+- É proibido usar IA para redigir o texto do trabalho (introdução, discussão, conclusão, interpretação).
+
+- O descumprimento será tratado como plágio intelectual, conforme normas da disciplina/instituição.
+
+## 6. Etapas e prazos
+
+| Etapa                                                | Descrição                                                                                                    | Prazo         | Observações                                                                              |
+| :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- | :------------ | :--------------------------------------------------------------------------------------- |
+| **1. Definição da pergunta, método e base de dados** | O(a) aluno(a) deverá propor a pergunta de pesquisa, o método  e a base de dados. | **Até 29/05** | Aprovação com o professor, por e-mail ou conversa antes/depois das próximas aulas.       |
+|   | |  | |
+| **2. Desenvolvimento do trabalho**                   | Implementar a análise em R + Quarto; construir a tabela principal e o gráfico do resultado principal.        | —             | Testar reprodutibilidade e revisar o texto com antecedência.                             |
+|   | |  | |
+| **3. Entrega final**                                 | Entregar o **PDF** e o **arquivo .qmd** (código-fonte completo).                        | **29/06**     | Os trabalhos deverão ser entregues por email. Trabalhos fora do prazo não serão aceitos |
+
+
+
+::: {style="font-size: 0.875em;"}
+Volte para [Cronograma](/ "Course schedule") ⏎
+:::

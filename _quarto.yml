@@ -1,0 +1,86 @@
+project:
+  type: website
+  output-dir: _site
+
+lang: "pt-br"
+
+website:
+  title: "IBM0288 - Microeconometria"
+  description: "Homepage para IBM0288 - Microeconometria no IBMEC-Brasília, 2026.1."
+  page-navigation: true
+  open-graph: true
+
+  page-footer:
+    right: "Página feita em [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2026, Raphael Gouvea"
+    background: "#1234FF"
+
+  sidebar:
+    background: "#1234FF"
+    #logo: "images/ibm0288_logo.png"
+    pinned: true
+    align: center
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: "Plano de Ensino"
+      - href: schedule.qmd
+        text: "Cronograma"
+      - href: project-description.qmd
+        text: "Trabalho Final: Projeto"
+      - section: "Conteúdo"
+        contents:
+          - href: section/section-1.qmd
+            text: "Seção 1: Plano de Ensino e Revisão"
+          - href: section/section-2.qmd
+            text: "Seção 2: Introdução à Inferência Causal e Experimentos"
+          - href: section/section-3.qmd
+            text: "Seção 3: Regressão"
+          - href: section/section-4.qmd
+            text: "Seção 4: Dados em Painel"
+          - href: section/section-5.qmd
+            text: "Seção 5: Variável Dependente Limitada"
+          - href: section/section-6.qmd
+            text: "Seção 6: Variáveis Instrumentais"
+          - href: section/section-7.qmd
+            text: "Seção 7: Diferenças em Diferenças"
+          - href: section/section-8.qmd
+            text: "Seção 8: Regressão Descontínua"
+          - href: section/section-9.qmd
+            text: "Seção 9: Tópicos Avançados"
+      - section: "Aulas Práticas em R"
+        contents:
+          - href: labs/lab-0.qmd
+            text: "Instalação de Softwares"
+          - href: labs/lab-1.qmd
+            text: "Revisão de Probabilidade e Estatística"
+          - href: labs/lab-2.qmd
+            text: "Experimentos Aleatórios"
+          - href: labs/lab-3.qmd
+            text: "Inferência Causal Baseada em Regressões"
+      - section: "Exercícios"
+        contents:
+          - href: homeworks/hw-1.qmd
+            text: "Exercício 1"
+          - href: homeworks/hw-2.qmd
+            text: "Exercício 2"
+          - href: homeworks/hw-3.qmd
+            text: "Exercício 3"
+      - section: "Material de apoio"
+        contents:
+          - href: help/rubin.qmd
+            text: "Resultados Potenciais"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      #dark: [cosmo, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+freeze: auto

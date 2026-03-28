@@ -1,0 +1,660 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  portuguese,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{siunitx}
+
+    \newcolumntype{d}{S[
+      table-align-text-before=false,
+      table-align-text-after=false,
+      input-symbols={-,\*+()}
+    ]}
+  
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Índice}
+\else
+  \newcommand\contentsname{Índice}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Lista de Figuras}
+\else
+  \newcommand\listfigurename{Lista de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Lista de Tabelas}
+\else
+  \newcommand\listtablename{Lista de Tabelas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabela}
+\else
+  \newcommand\tablename{Tabela}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listagem}
+\newcommand*\listoflistings{\listof{codelisting}{Lista de Listagens}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={E10.2 --- Renda e Democracia},
+  pdflang={pt},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{E10.2 --- Renda e Democracia}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Solução --- Regressão com Dados em Painel}
+\author{}
+\date{2026-03-28}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Índice}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+
+\section{Introdução}\label{introduuxe7uxe3o}
+
+Este documento apresenta a solução para o exercício E10.2 de Stock \&
+Watson (2020), que investiga a relação entre renda per capita e
+democracia utilizando um painel de 195 países para os anos de 1960 a
+2000 (em intervalos de 5 anos).
+
+A pergunta central é: \textbf{a democracia é um bem normal?} Ou seja, os
+cidadãos demandam mais liberdade política à medida que sua renda cresce?
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Pacotes e Dados}\label{pacotes-e-dados}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(skimr)}
+\FunctionTok{library}\NormalTok{(fixest)}
+\FunctionTok{library}\NormalTok{(modelsummary)}
+\FunctionTok{library}\NormalTok{(haven)      }\CommentTok{\# para leitura de arquivos .dta (Stata)}
+\FunctionTok{library}\NormalTok{(kableExtra)}
+\FunctionTok{library}\NormalTok{(readxl)}
+
+\CommentTok{\# Carregue o arquivo de dados:}
+\CommentTok{\# df \textless{}{-} read\_dta("Income\_Democracy.dta")}
+\CommentTok{\#}
+\CommentTok{\# Para fins de demonstração, a estrutura esperada dos dados é:}
+\CommentTok{\#   {-} dem\_ind     : índice de democracia (0 a 1)}
+\CommentTok{\#   {-} log\_gdppc   : log da renda per capita (defasado 5 anos)}
+\CommentTok{\#   {-} country     : identificador do país}
+\CommentTok{\#   {-} year        : ano da observação}
+\CommentTok{\#   {-} dem\_ind, log\_gdppc, age\_1, age\_2, age\_3, age\_4, educ, age\_median (controles)}
+\CommentTok{\#}
+\CommentTok{\# Substitua o caminho abaixo pelo caminho local do arquivo:}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_xlsx}\NormalTok{(here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"labs"}\NormalTok{,}\StringTok{"income\_democracy"}\NormalTok{,}\StringTok{"income\_democracy.xlsx"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{quote}
+\textbf{Nota:} Os blocos de código abaixo assumem que o objeto
+\texttt{df} foi carregado com o arquivo \texttt{Income\_Democracy.dta}
+disponível no site do livro. Substitua o caminho conforme necessário.
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{(a) Painel Balanceado?}\label{a-painel-balanceado}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Verificar se o painel é balanceado}
+\NormalTok{df }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{count}\NormalTok{(country) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{n\_paises        =} \FunctionTok{n}\NormalTok{(),}
+    \AttributeTok{obs\_min         =} \FunctionTok{min}\NormalTok{(n),}
+    \AttributeTok{obs\_max         =} \FunctionTok{max}\NormalTok{(n),}
+    \AttributeTok{painel\_balanceado =} \FunctionTok{if\_else}\NormalTok{(obs\_min }\SpecialCharTok{==}\NormalTok{ obs\_max, }\StringTok{"Sim"}\NormalTok{, }\StringTok{"Não"}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kbl}\NormalTok{(}\AttributeTok{caption =} \StringTok{"Verificação de Painel Balanceado"}\NormalTok{,}
+      \AttributeTok{col.names =} \FunctionTok{c}\NormalTok{(}\StringTok{"Nº de Países"}\NormalTok{, }\StringTok{"Mín. Obs."}\NormalTok{, }\StringTok{"Máx. Obs."}\NormalTok{, }\StringTok{"Balanceado?"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{), }\AttributeTok{full\_width =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+\centering
+\caption{\label{tab:painel-balanceado}Verificação de Painel Balanceado}
+\centering
+\begin{tabular}[t]{r|r|r|l}
+\hline
+Nº de Países & Mín. Obs. & Máx. Obs. & Balanceado?\\
+\hline
+195 & 1 & 9 & Não\\
+\hline
+\end{tabular}
+\end{table}
+
+Um painel é \textbf{balanceado} quando todos os países possuem o mesmo
+número de observações ao longo do tempo. Caso contrário, é \textbf{não
+balanceado}, o que pode ocorrer por dados faltantes em alguns
+países/anos.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{\texorpdfstring{(b) Estatísticas Descritivas de
+\texttt{Dem\_ind}}{(b) Estatísticas Descritivas de Dem\_ind}}\label{b-estatuxedsticas-descritivas-de-dem_ind}
+
+\subsection{(b.i--b.iv) Tabela de Estatísticas
+Descritivas}\label{b.ib.iv-tabela-de-estatuxedsticas-descritivas}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Estatísticas descritivas com skimr}
+\NormalTok{skim\_resultado }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{select}\NormalTok{(dem\_ind, log\_gdppc) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{skim}\NormalTok{()}
+
+\CommentTok{\# Tabela formatada com percentis customizados}
+\NormalTok{desc\_table }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}
+\NormalTok{    Variável     }\OtherTok{=} \StringTok{"dem\_ind"}\NormalTok{,}
+    \AttributeTok{N            =} \FunctionTok{sum}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(dem\_ind)),}
+\NormalTok{    Mínimo       }\OtherTok{=} \FunctionTok{min}\NormalTok{(dem\_ind, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+\NormalTok{    Máximo       }\OtherTok{=} \FunctionTok{max}\NormalTok{(dem\_ind, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+\NormalTok{    Média        }\OtherTok{=} \FunctionTok{mean}\NormalTok{(dem\_ind, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \StringTok{\textasciigrave{}}\AttributeTok{Desvio Padrão}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{sd}\NormalTok{(dem\_ind, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \StringTok{\textasciigrave{}}\AttributeTok{P10}\StringTok{\textasciigrave{}}        \OtherTok{=} \FunctionTok{quantile}\NormalTok{(dem\_ind, }\FloatTok{0.10}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \StringTok{\textasciigrave{}}\AttributeTok{P25}\StringTok{\textasciigrave{}}        \OtherTok{=} \FunctionTok{quantile}\NormalTok{(dem\_ind, }\FloatTok{0.25}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \StringTok{\textasciigrave{}}\AttributeTok{P50}\StringTok{\textasciigrave{}}        \OtherTok{=} \FunctionTok{quantile}\NormalTok{(dem\_ind, }\FloatTok{0.50}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \StringTok{\textasciigrave{}}\AttributeTok{P75}\StringTok{\textasciigrave{}}        \OtherTok{=} \FunctionTok{quantile}\NormalTok{(dem\_ind, }\FloatTok{0.75}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \StringTok{\textasciigrave{}}\AttributeTok{P90}\StringTok{\textasciigrave{}}        \OtherTok{=} \FunctionTok{quantile}\NormalTok{(dem\_ind, }\FloatTok{0.90}\NormalTok{, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  )}
+
+\NormalTok{desc\_table }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kbl}\NormalTok{(}\AttributeTok{digits =} \DecValTok{3}\NormalTok{,}
+      \AttributeTok{caption =} \StringTok{"Tabela 1 — Estatísticas Descritivas do Índice de Democracia (Dem\_ind)"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{), }\AttributeTok{full\_width =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+\centering
+\caption{\label{tab:estatisticas-descritivas}Tabela 1 — Estatísticas Descritivas do Índice de Democracia (Dem_ind)}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
+\hline
+Variável & N & Mínimo & Máximo & Média & Desvio Padrão & P10 & P25 & P50 & P75 & P90\\
+\hline
+dem\_ind & 1266 & 0 & 1 & 0.499 & 0.371 & 0 & 0.167 & 0.5 & 0.833 & 1\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Valores para EUA e Líbia}
+\NormalTok{paises\_interesse }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(country }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"United States"}\NormalTok{, }\StringTok{"Libya"}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(country) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}
+    \StringTok{\textasciigrave{}}\AttributeTok{Dem\_ind em 2000}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ dem\_ind[year }\SpecialCharTok{==} \DecValTok{2000}\NormalTok{],}
+    \StringTok{\textasciigrave{}}\AttributeTok{Média (todos os anos)}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(dem\_ind, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  )}
+
+\NormalTok{paises\_interesse }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kbl}\NormalTok{(}\AttributeTok{digits =} \DecValTok{3}\NormalTok{,}
+      \AttributeTok{caption =} \StringTok{"Dem\_ind para EUA e Líbia"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{), }\AttributeTok{full\_width =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+\centering
+\caption{\label{tab:paises-especificos}Dem_ind para EUA e Líbia}
+\centering
+\begin{tabular}[t]{l|r|r}
+\hline
+country & Dem\_ind em 2000 & Média (todos os anos)\\
+\hline
+Libya & 0 & 0.109\\
+\hline
+United States & 1 & 0.986\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Países por faixa de Dem\_ind médio}
+\NormalTok{df }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(country) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{media\_dem =} \FunctionTok{mean}\NormalTok{(dem\_ind, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{filter}\NormalTok{(media\_dem }\SpecialCharTok{\textgreater{}} \FloatTok{0.95} \SpecialCharTok{|}\NormalTok{ media\_dem }\SpecialCharTok{\textless{}} \FloatTok{0.10} \SpecialCharTok{|} \FunctionTok{between}\NormalTok{(media\_dem, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.7}\NormalTok{)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{faixa =} \FunctionTok{case\_when}\NormalTok{(}
+\NormalTok{    media\_dem }\SpecialCharTok{\textgreater{}} \FloatTok{0.95}            \SpecialCharTok{\textasciitilde{}} \StringTok{"\textgreater{} 0,95"}\NormalTok{,}
+\NormalTok{    media\_dem }\SpecialCharTok{\textless{}} \FloatTok{0.10}            \SpecialCharTok{\textasciitilde{}} \StringTok{"\textless{} 0,10"}\NormalTok{,}
+    \FunctionTok{between}\NormalTok{(media\_dem, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.7}\NormalTok{) }\SpecialCharTok{\textasciitilde{}} \StringTok{"Entre 0,3 e 0,7"}
+\NormalTok{  )) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{group\_by}\NormalTok{(faixa) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{slice\_head}\NormalTok{(}\AttributeTok{n =} \DecValTok{5}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{arrange}\NormalTok{(faixa, }\FunctionTok{desc}\NormalTok{(media\_dem)) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kbl}\NormalTok{(}\AttributeTok{digits =} \DecValTok{3}\NormalTok{,}
+      \AttributeTok{col.names =} \FunctionTok{c}\NormalTok{(}\StringTok{"País"}\NormalTok{, }\StringTok{"Média de Dem\_ind"}\NormalTok{, }\StringTok{"Faixa"}\NormalTok{),}
+      \AttributeTok{caption =} \StringTok{"Países selecionados por faixa de Dem\_ind médio"}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{), }\AttributeTok{full\_width =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+\centering
+\caption{\label{tab:paises-especificos}Países selecionados por faixa de Dem_ind médio}
+\centering
+\begin{tabular}[t]{l|r|l}
+\hline
+País & Média de Dem\_ind & Faixa\\
+\hline
+Afghanistan & 0.097 & < 0,10\\
+\hline
+China & 0.080 & < 0,10\\
+\hline
+Angola & 0.067 & < 0,10\\
+\hline
+Brunei & 0.056 & < 0,10\\
+\hline
+Burundi & 0.048 & < 0,10\\
+\hline
+Australia & 1.000 & > 0,95\\
+\hline
+Barbados & 1.000 & > 0,95\\
+\hline
+Belgium & 1.000 & > 0,95\\
+\hline
+Belize & 1.000 & > 0,95\\
+\hline
+Austria & 0.993 & > 0,95\\
+\hline
+Argentina & 0.666 & Entre 0,3 e 0,7\\
+\hline
+Antigua & 0.556 & Entre 0,3 e 0,7\\
+\hline
+Bolivia & 0.551 & Entre 0,3 e 0,7\\
+\hline
+Bangladesh & 0.533 & Entre 0,3 e 0,7\\
+\hline
+Armenia & 0.500 & Entre 0,3 e 0,7\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{(c--d) Estimações em
+Painel}\label{cd-estimauxe7uxf5es-em-painel}
+
+As regressões abaixo seguem a sequência do exercício, adicionando
+progressivamente efeitos fixos e controles demográficos.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# (c) OLS simples com erros clusterizados por país}
+\NormalTok{m1 }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(dem\_ind }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_gdppc,}
+            \AttributeTok{data    =}\NormalTok{ df,}
+            \AttributeTok{cluster =} \SpecialCharTok{\textasciitilde{}}\NormalTok{country)}
+
+\CommentTok{\# (d.ii) Efeitos fixos de país}
+\NormalTok{m2 }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(dem\_ind }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_gdppc }\SpecialCharTok{|}\NormalTok{ country,}
+            \AttributeTok{data    =}\NormalTok{ df,}
+            \AttributeTok{cluster =} \SpecialCharTok{\textasciitilde{}}\NormalTok{country)}
+
+\CommentTok{\# (d.ii) sem Azerbaijão}
+\NormalTok{m3 }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(dem\_ind }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_gdppc }\SpecialCharTok{|}\NormalTok{ country,}
+            \AttributeTok{data    =}\NormalTok{ df }\SpecialCharTok{|\textgreater{}} \FunctionTok{filter}\NormalTok{(country }\SpecialCharTok{!=} \StringTok{"Azerbaijan"}\NormalTok{),}
+            \AttributeTok{cluster =} \SpecialCharTok{\textasciitilde{}}\NormalTok{country)}
+
+\CommentTok{\# (d.v) Efeitos fixos de país e tempo}
+\NormalTok{m4 }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(dem\_ind }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_gdppc }\SpecialCharTok{|}\NormalTok{ country }\SpecialCharTok{+}\NormalTok{ year,}
+            \AttributeTok{data    =}\NormalTok{ df,}
+            \AttributeTok{cluster =} \SpecialCharTok{\textasciitilde{}}\NormalTok{country)}
+
+\CommentTok{\# (d.vi) Com controles demográficos + efeitos fixos de país e tempo}
+\CommentTok{\# (ajuste os nomes das variáveis conforme o dataset)}
+\NormalTok{m5 }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(dem\_ind }\SpecialCharTok{\textasciitilde{}}\NormalTok{ log\_gdppc }\SpecialCharTok{+}\NormalTok{ age\_1 }\SpecialCharTok{+}\NormalTok{ age\_2 }\SpecialCharTok{+}\NormalTok{ age\_3 }\SpecialCharTok{+}\NormalTok{ age\_4 }\SpecialCharTok{+}\NormalTok{ educ }\SpecialCharTok{+}\NormalTok{ age\_median }\SpecialCharTok{|}
+\NormalTok{              country }\SpecialCharTok{+}\NormalTok{ year,}
+            \AttributeTok{data    =}\NormalTok{ df,}
+            \AttributeTok{cluster =} \SpecialCharTok{\textasciitilde{}}\NormalTok{country)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Tabela de Resultados das
+Estimações}\label{tabela-de-resultados-das-estimauxe7uxf5es}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{modelsummary}\NormalTok{(}
+  \FunctionTok{list}\NormalTok{(}
+    \StringTok{"(c) OLS"}                   \OtherTok{=}\NormalTok{ m1,}
+    \StringTok{"(d.ii) EF País"}            \OtherTok{=}\NormalTok{ m2,}
+    \StringTok{"(d.iii) Sem Azerbaijão"}    \OtherTok{=}\NormalTok{ m3,}
+    \StringTok{"(d.v) EF País + Tempo"}     \OtherTok{=}\NormalTok{ m4,}
+    \StringTok{"(d.vi) + Controles Demog."} \OtherTok{=}\NormalTok{ m5}
+\NormalTok{  ),}
+  \AttributeTok{stars      =} \FunctionTok{c}\NormalTok{(}\StringTok{"*"} \OtherTok{=} \FloatTok{0.1}\NormalTok{, }\StringTok{"**"} \OtherTok{=} \FloatTok{0.05}\NormalTok{, }\StringTok{"***"} \OtherTok{=} \FloatTok{0.01}\NormalTok{),}
+  \AttributeTok{coef\_map   =} \FunctionTok{c}\NormalTok{(}
+    \StringTok{"log\_gdppc"} \OtherTok{=} \StringTok{"Log(PIB per capita)"}\NormalTok{,}
+    \StringTok{"age\_1"}     \OtherTok{=} \StringTok{"Faixa etária 1"}\NormalTok{,}
+    \StringTok{"age\_2"}     \OtherTok{=} \StringTok{"Faixa etária 2"}\NormalTok{,}
+    \StringTok{"age\_3"}     \OtherTok{=} \StringTok{"Faixa etária 3"}\NormalTok{,}
+    \StringTok{"age\_4"}     \OtherTok{=} \StringTok{"Faixa etária 4"}\NormalTok{,}
+    \StringTok{"educ"}      \OtherTok{=} \StringTok{"Educação"}\NormalTok{,}
+    \StringTok{"age\_median"}\OtherTok{=} \StringTok{"Idade mediana"}
+\NormalTok{  ),}
+  \AttributeTok{gof\_map    =} \FunctionTok{c}\NormalTok{(}\StringTok{"nobs"}\NormalTok{, }\StringTok{"r.squared"}\NormalTok{, }\StringTok{"adj.r.squared"}\NormalTok{),}
+  \AttributeTok{title      =} \StringTok{"Tabela 2 — Efeito da Renda per Capita sobre o Índice de Democracia"}\NormalTok{,}
+  \AttributeTok{notes      =} \StringTok{"Erros padrão clusterizados por país entre parênteses. * p\textless{}0,1; ** p\textless{}0,05; *** p\textless{}0,01."}\NormalTok{,}
+  \AttributeTok{output     =} \StringTok{"kableExtra"}
+\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{add\_header\_above}\NormalTok{(}\FunctionTok{c}\NormalTok{(}
+    \StringTok{" "} \OtherTok{=} \DecValTok{1}\NormalTok{,}
+    \StringTok{"Sem Efeitos Fixos"} \OtherTok{=} \DecValTok{1}\NormalTok{,}
+    \StringTok{"EF País"} \OtherTok{=} \DecValTok{2}\NormalTok{,}
+    \StringTok{"EF País + Tempo"} \OtherTok{=} \DecValTok{2}
+\NormalTok{  )) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{),}
+                \AttributeTok{latex\_options     =} \FunctionTok{c}\NormalTok{(}\StringTok{"hold\_position"}\NormalTok{, }\StringTok{"scale\_down"}\NormalTok{),}
+                \AttributeTok{full\_width        =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}[!h]
+\centering\centering
+\caption{\label{tab:tabela-resultados}Tabela 2 — Efeito da Renda per Capita sobre o Índice de Democracia}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{tabular}[t]{lccccc}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{Sem Efeitos Fixos} & \multicolumn{2}{c}{EF País} & \multicolumn{2}{c}{EF País + Tempo} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-6}
+  & (c) OLS & (d.ii) EF País & (d.iii) Sem Azerbaijão & (d.v) EF País + Tempo & (d.vi) + Controles Demog.\\
+\midrule
+Log(PIB per capita) & \num{0.236}*** & \num{0.084}*** & \num{0.084}*** & \num{0.054} & \num{0.029}\\
+ & (\num{0.012}) & (\num{0.032}) & (\num{0.032}) & (\num{0.042}) & (\num{0.054})\\
+Faixa etária 1 &  &  &  &  & \num{-1.171}\\
+ &  &  &  &  & (\num{1.915})\\
+Faixa etária 2 &  &  &  &  & \num{-1.718}\\
+ &  &  &  &  & (\num{1.534})\\
+Faixa etária 3 &  &  &  &  & \num{-3.508}**\\
+ &  &  &  &  & (\num{1.618})\\
+Faixa etária 4 &  &  &  &  & \num{-0.895}\\
+ &  &  &  &  & (\num{1.641})\\
+Educação &  &  &  &  & \num{-0.003}\\
+ &  &  &  &  & (\num{0.023})\\
+Idade mediana &  &  &  &  & \num{-0.001}\\
+ &  &  &  &  & (\num{0.026})\\
+\midrule
+Num.Obs. & \num{958} & \num{937} & \num{937} & \num{937} & \num{676}\\
+R2 & \num{0.438} & \num{0.729} & \num{0.729} & \num{0.756} & \num{0.732}\\
+R2 Adj. & \num{0.438} & \num{0.686} & \num{0.686} & \num{0.714} & \num{0.683}\\
+\bottomrule
+\multicolumn{6}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}Erros padrão clusterizados por país entre parênteses. * p<0,1; ** p<0,05; *** p<0,01.}\\
+\end{tabular}}
+\end{table}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{(e) Conclusões}\label{e-conclusuxf5es}
+
+Com base nas estimações acima, podemos tirar as seguintes conclusões
+sobre os efeitos da renda sobre a democracia:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Sem efeitos fixos (Modelo 1):} O coeficiente de
+  \texttt{log\_gdppc} é positivo e estatisticamente significativo,
+  sugerindo uma associação positiva entre renda e democracia.
+\item
+  \textbf{Com efeitos fixos de país (Modelo 2):} Ao controlar por
+  características não observadas e invariantes no tempo de cada país
+  (como história, cultura, instituições), o coeficiente se altera ---
+  tipicamente diminuindo ---, indicando que parte da correlação anterior
+  era espúria.
+\item
+  \textbf{Excluindo o Azerbaijão (Modelo 3):} Caso o resultado mude de
+  forma expressiva, isso sugere que o Azerbaijão é um \emph{outlier}
+  influente na estimação.
+\item
+  \textbf{Com efeitos fixos de país e tempo (Modelo 4):} Controlando
+  também por choques globais comuns a todos os países em cada período
+  (como crises internacionais ou ondas de democratização), a estimativa
+  causal do efeito da renda se torna mais confiável.
+\item
+  \textbf{Com controles demográficos (Modelo 5):} A inclusão de
+  variáveis demográficas permite isolar o efeito da renda de mudanças
+  estruturais populacionais que podem afetar simultaneamente renda e
+  democracia.
+\end{enumerate}
+
+No conjunto, a evidência sugere que \textbf{o efeito causal da renda
+sobre a democracia é modesto e menos robusto} do que a correlação bruta
+indica, especialmente após a inclusão de efeitos fixos. Isso questiona a
+hipótese de que a democracia é simplesmente um ``bem normal'' que cresce
+automaticamente com a renda.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{Referências}\label{referuxeancias}
+
+\begin{itemize}
+\tightlist
+\item
+  Stock, J. H., \& Watson, M. W. (2020). \emph{Introduction to
+  Econometrics} (4ª ed.). Pearson.
+\item
+  Acemoglu, D., Johnson, S., Robinson, J. A., \& Yared, P. (2008).
+  Income and Democracy. \emph{American Economic Review}, 98(3),
+  808--842.
+\end{itemize}
+
+
+
+
+\end{document}

@@ -1,0 +1,45 @@
+::: column-screen-inset-right
+| Seção | Data | Tópico | Preparação | Slides | Lab | Exercício | Prova | Projeto |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| [1](/section/section-1.html) | Seg 09/02 | Plano de Ensino | [📖](/section/section-1.html) | [💻️️](/slides/lec-1.html) |  |  |  |  |
+|  | Qua 11/02 | Revisão de Probabilidade e Estatística | [📖](/section/section-1.html) | [💻️️](/slides/lec-2.html) |  |  |  |  |
+|  | Seg 16/02 | Feriado: Carnaval |  |  |  |  |  |  |
+|  | Qua 18/02 | Feriado: Carnaval |  |  |  |  |  |  |
+|  | Seg 23/02 | Aula Prática em R | [📖](/section/section-1.html) |  | [⌨️](/labs/lab-1.html) |  |  |  |
+|  | Qua 25/02 | Aula Magna |  |  |  |  |  |  |
+| [2](/section/section-2.html) | Seg 02/03 | Introdução à Inferência Causal | [📖](/section/section-2.html) | [💻️️](/slides/lec-3.html) |  |  |  |  |
+|  | Qua 04/03 | Experimentos Aleatórios | [📖](/section/section-2.html) | [💻️️](/slides/lec-4.html) |  | [📝](/homeworks/hw-1.html) |  |  |
+|  | Seg 09/03 | Aula Prática em R | [📖](/section/section-2.html) |  | [⌨️](/labs/lab-2.html) |  |  |  |
+| [3](/section/section-3.html) | Qua 11/03 | Inferência causal baseada em regressões | [📖](/section/section-3.html) | [💻️️](/slides/lec-5.html) |  |  |  |
+|  | Seg 16/03 | Inferência causal baseada em regressões | [📖](/section/section-3.html) | [💻️️](/slides/lec-6.html)|  | [📝](/homeworks/hw-2.html) |  |  |
+|  | Qua 18/03 | Aula prática em R |  |  |  [⌨️](/labs/lab-3.html) |  |  |  |
+| [4](/section/section-4.html) | Seg 23/03 | Dados em painel | [📖](/section/section-4.html) | [💻 ](/slides/lec-7.html) |  |  |  |  |
+|  | Qua 25/03 | Dados em painel | [📖](/section/section-4.html) | [💻 ](/slides/lec-8.html) |  |  |  |  |
+|  | Seg 30/03 | Aula prática em R |  |  | [ ]() |  |  |  |
+| [5](/section/section-5.html) | Qua 01/04 | Modelos com variável dependente limitada | [📖](/section/section-5.html) | [💻️️](/slides/lec-9.html) |  |  |  |  |
+|  | Seg 06/04 | Modelos com variável dependente limitada | [📖](/section/section-5.html) | [💻️️](/slides/lec-10.html) |  |  |  |  |
+|  | Qua 08/04 | Revisão de Conteúdo (AP1) |  |  |  |  |  |  |
+|  | Seg 13/04 | **Avaliação Parcial 1 (AP1)** |  |  |  |  | [✍️]() |  |
+|  | Qua 15/04 | **Correção da AP1** |  |  |  |  |  |  |
+|  | Seg 20/04 | Feriado: Tiradentes (Véspera) |  |  |  |  |  |  |
+|  | Qua 22/04 | Aula prática em R |  |  | [ ]() |  |  |  |
+| [6](/section/section-6.html) | Seg 27/04 | Variáveis instrumentais | [📖](/section/section-6.html) | [💻️️](/slides/lec-11.html) |  | [📝]() |  |  |
+|  | Qua 29/04 | Variáveis instrumentais | [📖](/section/section-6.html) | [💻️️](/slides/lec-12.html) |  |  |  |  |
+|  | Seg 04/05 | Aula prática em R |  |  | [ ]() |  |  |  |
+| [7](/section/section-7.html) | Qua 06/05 | Diferenças em diferenças (dif-in-dif) | [📖](/section/section-7.html) | [💻️️](/slides/lec-13.html) |  |  |  |  |
+|  | Seg 11/05 | Diferenças em diferenças (dif-in-dif) | [📖](/section/section-7.html) | [💻️️](/slides/lec-14.html) |  |  |  |  |
+|  | Qua 13/05 | Aula prática em R |  |  | [ ]() |  |  |  |
+| [8](/section/section-8.html) | Seg 18/05 | Regressão discontínua | [📖](/section/section-8.html) | [💻️️](/slides/lec-15.html) |  | [📝]() |  |  |
+|  | Qua 20/05 | Regressão discontínua | [📖](/section/section-8.html) | [💻️️](/slides/lec-16.html) |  |  |  |  |
+|  | Seg 25/05 | Aula prática em R |  |  | [ ]() |  |  |  |
+| [9](/section/section-9.html) | Qua 27/05 | [Avanços recentes em dif-in-dif]{style="color: red;"} | [📖](/section/section-9.html) | [ ]() |  |  |  |  |
+|  | Seg 01/06 | [Avanços recentes em dif-in-dif]{style="color: red;"} | [📖](/section/section-9.html) | [ ]() |  |  |  |  |
+|  | Qua 03/06 | [Big Data e Machine Learning]{style="color: red;"} | [📖](/section/section-9.html) | [ ]() |  |  |  |  |
+|  | Seg 08/06 | [Big Data e Machine Learning]{style="color: red;"} | [📖](/section/section-9.html) | [ ]() |  |  |  |  |
+|  | Qua 10/06 | Revisão de Conteúdo (AP2) |  | [ ]() |  |  |  |  |
+|  | Seg 15/06 | **Avaliação Parcial 2 (AP2)** |  |  |  |  |  |  |
+|  | Qua 17/06 | **Correção da AP2** |  | [ ]() |  |  |  |  |
+|  | Seg 22/06 | Plantão de Dúvidas / Projeto Final |  |  |  |  |  |  |
+|  | Qua 24/06 | **Avaliação Substitutiva (AS)** |  |  |  |  |  |  |
+|  | Seg 29/06 | **Entrega dos trabalhos finais (AS)** |  |  |  |  |  | [📊](/project-description.html) |
+:::

@@ -50,7 +50,15 @@ CLAUDE.local.md
 
 # Quarto rendering artifacts
 .quarto/
+_site/
+_freeze/
+
+# R environment
+renv/
+renv.lock
 
 # Output artifacts — uncomment lines below based on your preference
 # *.rds
 # output/**/*.rds
+
+/.quarto/

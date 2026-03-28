@@ -1,12 +1,9 @@
-# CLAUDE.MD -- Academic Project Development with Claude Code
+# CLAUDE.MD -- IBM0288 Microeconometria
 
-<!-- HOW TO USE: Replace [BRACKETED PLACEHOLDERS] with your project info.
-     Customize Beamer environments and CSS classes for your theme.
-     Keep this file under ~150 lines — Claude loads it every session.
-     See the guide at docs/workflow-guide.html for full documentation. -->
-
-**Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
+**Project:** IBM0288 Microeconometria
+**Institution:** IBMEC
+**Instructor:** Prof. Raphael Gouvea
+**Semester:** 2026.1
 **Branch:** main
 
 ---
@@ -14,8 +11,8 @@
 ## Core Principles
 
 - **Plan first** -- enter plan mode before non-trivial tasks; save plans to `quality_reports/plans/`
-- **Verify after** -- compile/render and confirm output at the end of every task
-- **Single source of truth** -- Beamer `.tex` is authoritative; Quarto `.qmd` derives from it
+- **Verify after** -- render and confirm output at the end of every task
+- **Single source of truth** -- Quarto `.qmd` is authoritative (no Beamer)
 - **Quality gates** -- nothing ships below 80/100
 - **[LEARN] tags** -- when corrected, save `[LEARN:category] wrong → right` to MEMORY.md
 
@@ -24,20 +21,26 @@
 ## Folder Structure
 
 ```
-[YOUR-PROJECT]/
-├── CLAUDE.MD                    # This file
+website_test/
+├── CLAUDE.md                    # This file
+├── _quarto.yml                  # Quarto website config (output: _site/, Netlify)
+├── theme.scss                   # HTML website theme
+├── index.qmd                    # Course homepage
+├── schedule.qmd                 # Semester schedule
+├── slides/                      # RevealJS lecture slides (lec-1.qmd ... lec-N.qmd)
+│   ├── slides.scss              # Slide theme
+│   └── images/lec-N/           # Images per lecture
+├── section/                     # Section prep pages (section-1.qmd ...)
+├── labs/                        # R practical labs (lab-0.qmd ...)
+├── homeworks/                   # Problem sets and solutions
+├── exams/                       # Exam files
+├── help/                        # Support material
+├── documents/                   # Templates, PDFs, bibliography, images
 ├── .claude/                     # Rules, skills, agents, hooks
-├── Bibliography_base.bib        # Centralized bibliography
-├── Figures/                     # Figures and images
-├── Preambles/header.tex         # LaTeX headers
-├── Slides/                      # Beamer .tex files
-├── Quarto/                      # RevealJS .qmd files + theme
-├── docs/                        # GitHub Pages (auto-generated)
-├── scripts/                     # Utility scripts + R code
+├── scripts/                     # Utility scripts
 ├── quality_reports/             # Plans, session logs, merge reports
-├── explorations/                # Research sandbox (see rules)
-├── templates/                   # Session log, quality report templates
-└── master_supporting_docs/      # Papers and existing slides
+├── explorations/                # Research sandbox
+└── master_supporting_docs/      # Reference papers and existing slides
 ```
 
 ---
@@ -45,17 +48,14 @@
 ## Commands
 
 ```bash
-# LaTeX (3-pass, XeLaTeX only)
-cd Slides && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
-BIBINPUTS=..:$BIBINPUTS bibtex file
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
-TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode file.tex
+# Render full website (Netlify deploys _site/ automatically)
+quarto render
 
-# Deploy Quarto to GitHub Pages
-./scripts/sync_to_docs.sh LectureN
+# Render a single file
+quarto render slides/lec-1.qmd
 
 # Quality score
-python scripts/quality_score.py Quarto/file.qmd
+python scripts/quality_score.py slides/lec-N.qmd
 ```
 
 ---
@@ -74,23 +74,16 @@ python scripts/quality_score.py Quarto/file.qmd
 
 | Command | What It Does |
 |---------|-------------|
-| `/compile-latex [file]` | 3-pass XeLaTeX + bibtex |
-| `/deploy [LectureN]` | Render Quarto + sync to docs/ |
-| `/extract-tikz [LectureN]` | TikZ → PDF → SVG |
 | `/proofread [file]` | Grammar/typo/overflow review |
 | `/visual-audit [file]` | Slide layout audit |
 | `/pedagogy-review [file]` | Narrative, notation, pacing review |
 | `/review-r [file]` | R code quality review |
-| `/qa-quarto [LectureN]` | Adversarial Quarto vs Beamer QA |
 | `/slide-excellence [file]` | Combined multi-agent review |
-| `/translate-to-quarto [file]` | Beamer → Quarto translation |
 | `/validate-bib` | Cross-reference citations |
 | `/devils-advocate` | Challenge slide design |
-| `/create-lecture` | Full lecture creation |
 | `/commit [msg]` | Stage, commit, PR, merge |
 | `/lit-review [topic]` | Literature search + synthesis |
 | `/research-ideation [topic]` | Research questions + strategies |
-| `/interview-me [topic]` | Interactive research interview |
 | `/review-paper [file]` | Manuscript review |
 | `/data-analysis [dataset]` | End-to-end R analysis |
 | `/learn [skill-name]` | Extract discovery into persistent skill |
@@ -99,38 +92,38 @@ python scripts/quality_score.py Quarto/file.qmd
 
 ---
 
-<!-- CUSTOMIZE: Replace the example entries below with your own
-     Beamer environments and Quarto CSS classes. These are examples
-     from the original project — delete them and add yours. -->
+## Quarto CSS Classes (slides/slides.scss)
 
-## Beamer Custom Environments
-
-| Environment       | Effect        | Use Case       |
-|-------------------|---------------|----------------|
-| `[your-env]`      | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `keybox` | Gold background box | Key points |
-| `highlightbox` | Gold left-accent box | Highlights |
-| `definitionbox[Title]` | Blue-bordered titled box | Formal definitions |
--->
-
-## Quarto CSS Classes
-
-| Class              | Effect        | Use Case       |
-|--------------------|---------------|----------------|
-| `[.your-class]`    | [Description] | [When to use]  |
-
-<!-- Example entries (delete and replace with yours):
-| `.smaller` | 85% font | Dense content slides |
-| `.positive` | Green bold | Good annotations |
--->
+| Class       | Effect                                        | Use Case                        |
+|-------------|-----------------------------------------------|---------------------------------|
+| `.question` | Blue left-border, light blue bg               | Discussion/comprehension checks |
+| `.poll`     | Gold left-border, light yellow bg             | In-class polls                  |
+| `.appex`    | Blue left-border + padding, light blue bg     | Applied exercises               |
+| `.small`    | 75% font size                                 | Dense content or footnotes      |
 
 ---
 
 ## Current Project State
 
-| Lecture | Beamer | Quarto | Key Content |
-|---------|--------|--------|-------------|
-| 1: [Topic] | `Lecture01_Topic.tex` | `Lecture1_Topic.qmd` | [Brief description] |
-| 2: [Topic] | `Lecture02_Topic.tex` | -- | [Brief description] |
+| File | Topic | Status |
+|------|-------|--------|
+| `slides/lec-1.qmd` | Plano de Ensino | ✅ Done |
+| `slides/lec-2.qmd` | Revisão de Probabilidade e Estatística | ✅ Done |
+| `slides/lec-3.qmd` | Introdução à Inferência Causal | ✅ Done |
+| `slides/lec-4.qmd` | Aleatorização e Experimentos | ✅ Done |
+| `slides/lec-5.qmd` | Inferência Causal Baseada em Regressões | ✅ Done |
+| `slides/lec-6.qmd` | Viés de Variável Omitida | ✅ Done |
+| `slides/lec-7.qmd` | Dados em Painel: Efeitos Fixos | ✅ Done |
+| `slides/lec-8.qmd` | Dados em Painel: Efeitos de Tempo | ✅ Done |
+| `slides/lec-9.qmd` | Variável Dependente Limitada (1) | ✅ Done |
+| `slides/lec-10.qmd` | Variável Dependente Limitada (2) | ✅ Done |
+| `slides/lec-11.qmd` | Variáveis Instrumentais (1) | ✅ Done |
+| `slides/lec-12.qmd` | Variáveis Instrumentais (2) | ✅ Done |
+| `slides/lec-13.qmd` | Diferenças em Diferenças (1) | ✅ Done |
+| `slides/lec-14.qmd` | Diferenças em Diferenças (2) | ✅ Done |
+| `slides/lec-15.qmd` | Regressão Descontínua (1) | ✅ Done |
+| `slides/lec-16.qmd` | Regressão Descontínua (2) | ✅ Done |
+| `slides/lec-17.qmd` | Avanços Recentes em DiD (1) | 🔲 TODO |
+| `slides/lec-18.qmd` | Avanços Recentes em DiD (2) | 🔲 TODO |
+| `slides/lec-19.qmd` | Big Data e Machine Learning (1) | 🔲 TODO |
+| `slides/lec-20.qmd` | Big Data e Machine Learning (2) | 🔲 TODO |

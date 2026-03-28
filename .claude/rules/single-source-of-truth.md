@@ -1,69 +1,51 @@
 ---
 paths:
-  - "Figures/**/*"
-  - "Quarto/**/*.qmd"
-  - "Slides/**/*.tex"
+  - "slides/**/*.qmd"
+  - "section/**/*.qmd"
+  - "labs/**/*.qmd"
+  - "homeworks/**/*.qmd"
 ---
 
-# Single Source of Truth: Enforcement Protocol
+# Single Source of Truth: Quarto-Native Project
 
-**The Beamer `.tex` file is the authoritative source for ALL content.** Everything else is derived.
+**The `.qmd` file is the authoritative source for ALL content.** This project has no Beamer source.
 
 ## The SSOT Chain
 
 ```
-Beamer .tex (SOURCE OF TRUTH)
-  ├── extract_tikz.tex → PDF → SVGs (derived)
-  ├── Quarto .qmd → HTML (derived)
-  ├── Bibliography_base.bib (shared)
-  └── Figures/LectureN/*.rds → plotly charts (data source)
+Quarto .qmd (SOURCE OF TRUTH)
+  ├── _site/ HTML output (derived — never edit directly)
+  ├── slides/images/lec-N/ (static images referenced by slides)
+  └── documents/references.bib (shared bibliography)
 
-NEVER edit derived artifacts independently.
-ALWAYS propagate changes from source → derived.
+NEVER edit _site/ output directly.
+ALWAYS edit the .qmd source, then re-render.
 ```
 
 ---
 
-## TikZ Freshness Protocol (MANDATORY)
+## Content Fidelity Checklist (for translated slides from IBM0288_old)
 
-**Before using ANY TikZ SVG in a Quarto slide, verify it matches the current Beamer source.**
+When translating a slide from the old format to the new IBM0288 format:
 
-### Diff-Check Procedure
-
-1. Read the TikZ block from the Beamer `.tex` file
-2. Read the corresponding block from `Figures/LectureN/extract_tikz.tex`
-3. Compare EVERY coordinate, label, color, opacity, and anchor point
-4. If ANY difference exists: update `extract_tikz.tex` from Beamer, recompile, regenerate SVGs
-5. Only then reference the SVG in the QMD
-
-### When to Re-Extract
-
-Re-extract ALL TikZ diagrams when:
-- The Beamer `.tex` file has been modified since last extraction
-- Starting a new Quarto translation
-- Any TikZ-related quality issue is reported
-- Before any commit that includes QMD changes
+```
+[ ] All slide content preserved (no slides dropped, no new slides invented)
+[ ] All equations preserved with identical notation
+[ ] All images copied to slides/images/lec-N/ and paths updated
+[ ] Old CSS classes replaced: .highlight → .question/.appex, .rounded-box → .appex
+[ ] YAML frontmatter matches lec-8.qmd conventions
+[ ] Footer and logo paths correct
+```
 
 ---
 
-## Environment Parity (MANDATORY)
+## Environment / CSS Parity
 
-**Every Beamer environment MUST have a CSS equivalent before translation begins.**
+Before translating any old slide that uses custom CSS:
 
-1. Scan the Beamer source for all custom environments
-2. Check each against your theme SCSS file
-3. If ANY environment is missing from SCSS, create it BEFORE translating
-
----
-
-## Content Fidelity Checklist
-
-```
-[ ] Frame count: Beamer frames == Quarto slides
-[ ] Math check: every equation appears with identical notation
-[ ] Citation check: every \cite has a @key in Quarto
-[ ] Environment check: every Beamer box has CSS equivalent
-[ ] Figure check: every \includegraphics has SVG or plotly equivalent
-[ ] No added content: Quarto does not invent slides not in Beamer
-[ ] No dropped content: every Beamer idea appears in Quarto
-```
+1. Check what classes are used in the old slide (`.highlight`, `.rounded-box`, `.button`)
+2. Map to new classes in `slides/slides.scss`:
+   - `.highlight` → `.question` or inline bold/color
+   - `.rounded-box` → `.appex`
+   - `.button` → standard Quarto link
+3. If a new class is needed, add it to `slides/slides.scss` before writing the slide

@@ -1,0 +1,253 @@
+---
+title: "Introdução à Microeconometria"
+subtitle: "IBM0288 - 2026.1"
+author: "Prof. Raphael Gouvea"
+footer:  "O uso de celulares e computadores durante as aulas expositivas não é permitido."
+logo: "images/ibmec.png"
+format: 
+  revealjs: 
+    theme: slides.scss
+    transition: fade
+    slide-number: true
+execute:
+  freeze: auto
+---
+
+```{r}
+#| include: false
+library(countdown)
+```
+
+# Bem-vindos a Microeconometrica
+
+## Sobre o professor
+
+:::::: columns
+::: {.column width="50%"}
+![](images/lec-1/mine.jpeg){fig-alt="Headshot of Raphael Gouvea" fig-align="center" width="300"}
+:::
+
+:::: {.column width="50%"}
+::: {style="font-size: 80%;"}
+-   Professor do IBMEC Brasília
+-   Pesquisador do Instituto de Pesquisa Econômica Aplicada (cedido)
+-   Diretor de Bioindústria e Insumos Estratégicos da Saúde na Secretaria de Economia Verde (MDIC)
+-   Assessor Econômico Deputada Federal Tabata Amaral (entre 2021 e Set/2025)
+-   Mais informações em [raphaelgouvea.com](https://raphaelgouvea.com)
+:::
+::::
+::::::
+
+## Perguntas de pesquisa que tenho interesse em responder
+
+```         
+1. Como choques macroeconômicos e mudanças regulatórias afetam a alocação de mão de obra e a desigualdade salarial em economias em desenvolvimento?
+
+2. Qual é o impacto causal de reformas na tributação sobre o consumo (ex: substituição tributária ou mudanças de alíquota) na evolução dos preços de bens essenciais e como isso afeta a desigualdade de bem-estar entre diferentes faixas de renda?
+
+3. Em que medida a redistribuição de recursos via FUNDEB alterou o comportamento de investimento das redes municipais de ensino e qual foi o impacto resultante no desempenho escolar (IDEB) controlado por efeitos fixos de município?
+```
+
+## Nos conhecendo melhor
+
+-   Nome
+
+-   Áreas de interesse
+
+-   Uma pergunta de pesquisa que gostaria de responder?
+
+-   O que você espera do curso?
+
+## O que entendemos por Microeconometria neste curso?
+
+::: {style="font-size: 70%;"}
+Neste curso, a Microeconometria não é vista apenas como um conjunto de fórmulas, mas como o instrumento de viabilização da pesquisa científica.
+
+O objetivo é fornecer a você as ferramentas necessárias para:
+
+-   Responder perguntas de modo preciso: Ir além da intuição e fornecer estimativas pontuais com rigor estatístico.
+
+-   Quantificar o desconhecido: Transformar hipóteses teóricas em evidências numéricas mensuráveis e replicáveis.
+
+-   **Estabelecer Causalidade:** Identificar o efeito real de uma variável sobre outra, isolando ruídos e fatores de confusão.
+
+-   **Gerar Contrafactuais:** Responder com precisão à pergunta: "O que teria acontecido se a política pública não tivesse sido implementada?".
+:::
+
+# Plano de Ensino
+
+## Aprendizado Esperado: Teoria
+
+::: {style="font-size: 70%;"}
+O curso tem como objetivo introduzir os alunos às principais técnicas de **inferência causal** utilizadas em economia, com ênfase na identificação e avaliação de efeitos causais em contextos empíricos.
+
+Ao final do curso, espera-se que você seja capaz de:
+
+-   Compreender os fundamentos: Entender a lógica por trás da inferência causal e dos contrafactuais.
+
+-   Formular Hipóteses: Desenvolver perguntas de pesquisa que possam ser testadas empiricamente.
+
+-   Dominar o Instrumental: Aplicar métodos como Experimentos Aleatórios, Diferenças-em-Diferenças, Variáveis Instrumentais e Regressão Descontínua.
+:::
+
+## Aprendizado Esperado: Prática
+
+::: {style="font-size: 70%;"}
+Além da base teórica, o curso foca no desenvolvimento de habilidades técnicas aplicadas.
+
+-   Linguagem R: Você aprenderá a implementar todas as técnicas estudadas utilizando programação em R.
+
+-   Análise de Dados: Desenvolverá a capacidade de manipular bases de dados reais para extrair conclusões estatísticas.
+
+-   Interpretação Crítica: Habilidade para ler e avaliar criticamente resultados empíricos em relatórios e artigos científicos.
+
+-   Reprodutibilidade: Uso de programação para garantir que suas análises sejam transparentes e replicáveis.
+:::
+
+## Integridade Acadêmica
+
+::: {style="font-size: 70%;"}
+Espera-se integridade absoluta do estudante em todas as atividades acadêmicas. Integridade implica adesão firme a um conjunto de valores baseados na honestidade em relação ao próprio esforço intelectual e ao dos outros.
+
+-   Autoria: A entrega de um trabalho indica que ele é de sua autoria e toda assistência externa deve ser devidamente reconhecida.
+
+-   Colaboração: Discussões são encorajadas, mas o código final e a escrita devem ser individuais.
+
+-   Âmbito: A integridade é esperada não apenas em situações formais, mas em todos os relacionamentos e interações vinculados ao processo educacional.
+:::
+
+::: callout-warning
+O plágio ou a falta de atribuição de créditos em scripts de R serão tratados com o mesmo rigor de uma avaliação teórica.
+:::
+
+## Uso de Telas: discussão
+
+::: {style="text-align: center;"}
+<iframe width="800" height="450" src="https://www.youtube.com/embed/38YOjOnDaS8" title="Com celular, faculdade tem cara de escola" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+:::
+
+## Política de Uso de Telas
+
+::: {style="font-size: 60%;"}
+Diversas pesquisas demonstram que estudantes aprendem menos e obtêm notas piores quando utilizam dispositivos eletrônicos em sala, prejudicando inclusive os colegas ao redor.
+
+-   Evidências: Diversos estudos indicam que o uso de telas dispersa a atenção, mesmo quando utilizadas para anotações, e gera prejudica aprendizagem de colegas ao redor.
+
+-   Aulas Expositivas: **Não será permitido o uso de computadores, tablets ou celulares durante as aulas teóricas!**
+
+-   Aulas Práticas: O uso de computadores (não celulares!) será obrigatório para a realização das atividades em R.
+
+-   Exceções: Casos específicos, como deficiências de aprendizagem, podem ser discutidos individualmente para autorização de uso.
+:::
+
+::: callout-important
+Foco no Aprendizado: o objetivo desta política é garantir um ambiente de aprendizado profundo e sem distrações para todos.
+:::
+
+## IA, Programação e Aprendizado
+
+::: {style="font-size: 70%;"}
+Ferramentas como ChatGPT e GitHub Copilot são parte do ecossistema atual, mas seu uso deve focar no desenvolvimento de competências:
+
+-   O Modelo Editor-Chefe: A IA é como um estagiário rápido, mas descuidado. Você é o editor-chefe e o único responsável por cada linha de código e interpretação.
+
+-   Conhecimento de Base: Sem entender a lógica e a sintaxe, você não será capaz de revisar ou validar o trabalho da IA.
+
+-   Transparência: O uso de IA para auxílio na programação deve ser explicitamente declarado em seus trabalhos.
+
+-   Recomendação: Tente resolver sozinho primeiro! Use a IA para entender o erro, não para copiar a solução. **O aprendizado ocorre na transição entre o erro e a compreensão.**
+:::
+
+## IA e Produção de Textos
+
+::: {style="font-size: 65%;"}
+Diferente da programação, a redação de textos e interpretações segue regras mais estritas:
+
+-   Proibição de Redação Automatizada: O uso de IA para redação integral ou parcial de trabalhos é estritamente proibido!
+
+-   Escrita como Pensamento: Escrever é o processo fundamental de organizar o pensamento causal e testar a lógica dos seus argumentos.
+
+-   Avaliação de Autoria: Textos com características de geração automatizada (generalizações vagas ou falta de precisão teórica) serão avaliados com rigor.
+
+-   Objetivo: Avaliar sua capacidade de articular ideias, não a habilidade de um algoritmo em prever a próxima palavra.
+:::
+
+::: callout-important
+O uso não declarado de IA será tratado sob a política de integridade acadêmica da disciplina.
+:::
+
+## Suporte ao Aluno
+
+::: {style="font-size: 65%;"}
+O Ibmec é comprometido com a equidade e a inclusão de todos os nossos alunos. Caso você enfrente dificuldades acadêmicas, emocionais ou de adaptação, utilize os canais de apoio:
+
+-   Setor CASA: Oferece atendimento personalizado e suporte psicopedagógico ao longo de toda a sua trajetória universitária.
+
+-   Dificuldades na Disciplina: Não hesite em me procurar após as aulas ou via e-mail institucional para discutirmos seu desempenho ou necessidades específicas.
+
+-   Diversidade e Inclusão: Este é um espaço seguro onde todos os históricos e perspectivas são valorizados como recursos para o aprendizado.
+:::
+
+::: callout-note
+Mais informações sobre o CASA: acesse o portal do aluno ou o Blog do Ibmec para detalhes sobre como agendar um atendimento.
+:::
+
+## Avaliação: Componentes e Pesos
+
+::: {style="font-size: 70%;"}
+As avaliações de aprendizagem são compostas por provas teóricas e atividades práticas:
+
+-   Avaliação Parcial 1 (AP1): Individual, em sala e sem consulta (Peso: 40%).
+
+-   Avaliação Parcial 2 (AP2): Individual, em sala e sem consulta (Peso: 40%).
+
+-   Avaliação Continuada (AC): Conjunto de atividades práticas em R realizadas ao longo do semestre (Peso: 20%).
+
+-   Avaliação Substitutiva (AS): Individual, em sala e sem consulta, cobrindo todo o conteúdo.
+:::
+
+::: callout-tip
+Cálculo da Nota Final (NF): $NF = (0,4 \times AP1) + (0,4 \times AP2) + (0,2 \times AC)$
+:::
+
+## Aprovação e Políticas de Recuperação
+
+::: {style="font-size: 70%;"}
+Para a conclusão da disciplina, seguiremos os critérios abaixo:
+
+-   Critérios de Aprovação: Nota Final (NF) ≥ 7,0 e frequência mínima de 75%.
+
+-   Uso da AS:
+
+    -   Substitui prova perdida (AP1 ou AP2).
+
+    -   Substitui a menor nota (AP1 ou AP2) para quem tem NF \< 7 ou deseja aumentar a média.
+:::
+
+::: callout-important
+O aluno poderá realizar um projeto final opcional para substituir a nota da AC, caso a nota do projeto seja maior.
+:::
+
+## Bibliografia Básica
+
+Os textos abaixo formam o núcleo teórico da nossa disciplina:
+
+-   Stock & Watson (2020): Introduction to Econometrics (4th ed.). Pearson.
+
+-   Stock & Watson (2004): Econometria (1ª ed.). Pearson. Disponível na biblioteca.
+
+    Obs: A 1ª edição pode ser utilizada; conteúdos novos serão discutidos e sinalizados em sala.
+
+-   Angrist & Pischke (2015): Mastering 'Metrics: The Path from Cause to Effect. Princeton University Press.
+
+## Bibliografia Complementar
+
+Para aprofundamento em design de pesquisa e técnicas avançadas:
+
+-   Angrist & Pischke (2009): Mostly Harmless Econometrics: An Empiricist's Companion. Princeton University Press.
+
+-   Cunningham (2021): Causal Inference: The Mixtape. Yale University Press.
+
+-   Huntington-Klein (2025): The Effect: An Introduction to Research Design and Causality. Chapman & Hall.

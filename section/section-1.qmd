@@ -1,0 +1,39 @@
+---
+title: "Seção 1"
+subtitle: "Introdução ao curso e revisão"
+---
+
+::: callout-important
+O uso de celulares e computadores durante as aulas expositivas não é permitido.
+:::
+
+## Preparação {#prepare}
+
+### Aula 1: Plano de Ensino
+
+📖 Leia o [plano de ensino](/course-syllabus.html)
+
+### Aula 2: Revisão de Probabilidade e Estatística
+
+📖 Leia os Capítulos 2 e 3 de Stock e Watson.
+
+ou
+
+📖 Leia os Capítulos 3 e 4 de Huntington-Klein.
+
+**Observação:** A seção 3.5 da 4a Edição de Stock e Watson será coberta em outra aula. Esta seção não está disponível na 1a Edição. 
+
+
+## Conteúdo da aula
+
+<!-- 🖥️ [Lab 0 -](/_slides/lab-0.html)[Meet](/slides/lab-0.html)[+ greet](/_slides/lab-0.html) -->
+
+💻 [Aula 1 -Introdução a IBM02880](/slides/lec-1.html)
+
+💻 [Aula 2 - Revisão de Probabilidade e Estatística](/slides/lec-2.html)
+
+⌨️ [Aula Prática](/labs/lab-1.html)
+
+::: {style="font-size: 0.875em;"}
+Volte para [Cronograma](/schedule/ "Course schedule") ⏎
+:::

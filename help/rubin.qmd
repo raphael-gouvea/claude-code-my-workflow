@@ -1,0 +1,122 @@
+---
+title: "Resultados Potenciais: Modelo de Rubin"
+---
+
+## Introdução
+
+Esta nota faz uma breve apresentação do modelo de resultados potenciais, também conhecido como modelo de Rubin. Este modelo fornece uma linguagem formal para definir **efeito causal** e, portanto, possibilitar a realização de inferência causal. Ele será a base base conceitual principal utilizada ao longo do curso para os métodos de identificação de efeitos causais.
+
+## 1. Conceitos Fundamentais
+
+### 1.1 Resultados Potenciais
+
+Para cada unidade (indivíduo, firma, país, etc.) $i$ em uma população, definimos a existência de dois *resultados potenciais*:
+
+$Y_{i1}$: O resultado para a unidade $i$ se ela recebesse o tratamento.
+    
+$Y_{i0}$: O resultado para a unidade $i$ se ela **não** recebesse o tratamento (controle).
+
+A ideia crucial é que esses resultados potenciais são **contrafactuais**, ou seja para um dado indivíduo apenas um deles pode ser observado.
+
+### 1.2 Atribuição de Tratamento
+
+Seja $D_i$ uma variável binária que indica o status de tratamento da unidade $i$:
+
+$D_i = 1$ se a unidade $i$ recebeu o tratamento.
+    
+$D_i = 0$ se a unidade $i$ *não* recebeu o tratamento (controle).
+
+### 1.3 Resultado Observado
+
+O resultado que observamos para a unidade $i$, denotado por $Y_i$, é uma função de seus resultados potenciais e de seu status de tratamento. Matematicamente, podemos expressar isso como:
+
+$$
+Y_i = D_i Y_{i1} + (1 - D_i) Y_{i0}
+$$
+
+Isso significa que observamos $Y_{i1}$ se $D_i=1$ e $Y_{i0}$ se $D_i=0$.
+
+## 2. Efeitos Causais
+
+### 2.1 Efeito Tratamento Individual
+
+O efeito causal do tratamento para uma unidade $i$ será definido como a diferença entre seus resultados potenciais:
+
+$$
+\tau_i = Y_{i1} - Y_{i0}
+$$
+
+Este é o efeito que **gostaríamos** de conhecer para cada unidade. No entanto, é impossível observar $\tau_i$ diretamente, pois só podemos observar um dos resultados potenciais para cada unidade.
+
+### 2.2 Efeito Tratamento Médio (Average Treatment Effect - ATE)
+
+Ainda que o efeito causal individual seja não observável, conceitualmente temos que existe uma distribuição desses efeitos de tratamento. Dessa forma, podemos trabalhar com as características desta distribuição, como por exemplo, a média. Assim, em geral, estamos interessados em estimar o **efeito tratamento médio** (ATE) para avaliar o efeito causal em determinados grupos. O ATE é o efeito médio do tratamento em toda a população:
+
+$$
+\text{ATE} = E[Y_1 - Y_0] = E[\tau_i]
+$$
+
+O ATE representa a diferença esperada nos resultados se toda a população recebesse o tratamento versus se ninguém recebesse o tratamento.
+
+### 2.3 Efeito Tratamento Médio no Grupo Tratado (Average Treatment Effect on the Treated - ATT)
+
+Outra medida de interesse comum é o efeito médio do tratamento apenas para aqueles que realmente receberam o tratamento:
+
+$$
+\text{ATT} = E[Y_1 - Y_0 | D=1]
+$$
+
+O ATT é particularmente útil em avaliações de políticas, onde se deseja saber o efeito da política sobre aqueles que foram realmente afetados por ela.
+
+### 2.4 Efeito Tratamento Médio no Grupo dos Não Tratados (Average Treatment Effect on the Unreated - ATU)
+
+Assim como definimos o ATT, também definimos o efeito médio do tratamento para aqueles que não receberam o tratamento:
+
+$$
+\text{ATU} = E[Y_1 - Y_0 | D=0]
+$$
+
+Ainda que a interpretação do ATU seja menos intuitiva, o conceito é particularmente útil para entender as hipóteses necessárias para eliminar viés de seleção. 
+
+## 3. O Problema Fundamental da Inferência Causal
+
+O problema fundamental da inferência causal decorre diretamente do fato de que não observamos os resultados contrafactuais. Para qualquer unidade $i$, observamos $Y_i = Y_{i1}$ (se $D_i=1$) ou $Y_i = Y_{i0}$ (se 
+$D_i=0$), mas nunca ambos simultaneamente. Isso significa que não podemos calcular $\tau_i = Y_{i1} - Y_{i0}$ para  nenhuma unidade específica.
+
+Consequentemente, inferir efeitos causais (especialmente os efeitos médios como ATE, ATT ou ATU) requer *hipóteses* que nos permitam estimar as médias dos efeitos tratamentos, mesmo que não possamos observá-los diretamente para cada unidade.
+
+## 4. Suposições Chave para Identificação
+
+Para que possamos usar dados observados para estimar efeitos causais, o Modelo de Rubin requer certas suposições.
+
+### 4.1 SUTVA (Stable Unit Treatment Value Assumption)
+
+A Suposição de Valor de Tratamento Unitário Estável (SUTVA) é crucial para que os resultados potenciais sejam bem definidos. Ela afirma que:
+
+1.  **Não Interferência:** O tratamento de uma unidade não afeta os resultados potenciais de outra unidade. 
+
+Ou seja, $Y_{i1}$ e $Y_{i0}$ são bem definidos e não dependem do status de tratamento de outras unidades. Isto implica que não existem *spillovers* ou efeitos de rede do tratamento.
+
+2.  **Consistência do Tratamento:** Não há diferentes versões do tratamento. O tratamento $D_i=1$ significa a mesma coisa para todas as unidades tratadas, e a ausência de tratamento $D_i=0$ significa a mesma coisa para todas as unidades de controle.
+
+Em termos práticos, SUTVA garante que os resultados potenciais são únicos e que podemos pensar neles isoladamente  para cada unidade, sem que "o tratamento" ou "o controle" se alterem em função de características externas ou de outras unidades.
+
+### 4.2 Não-confundimento (Unconfoundedness) ou Independência Condicional
+
+Esta é uma suposição crucial para a identificação em muitos métodos causais. Ela afirma que, condicionando em um conjunto de covariáveis observáveis $X$, o status de tratamento é independente dos resultados potenciais:
+
+$$
+(Y_{i0}, Y_{i1}) \perp D_i \mid X_i
+$$
+
+Em outras palavras, uma vez que controlamos por $X_i$, a atribuição de tratamento é "como se fosse aleatória". Isso implica que qualquer diferença nos resultados médios entre grupos tratados e não tratados *dentro* de cada estrato de $X_i$ pode ser atribuída ao tratamento e não a diferenças preexistentes nos resultados potenciais. Sem essa suposição (ou hipóteses de identificação adicionais), a seleção para o tratamento é baseada em fatores que também afetam os resultados levando a *viés de seleção*.
+
+
+## Referências
+
+Cunningham, S. [Causal Inference: the mixtape](https://mixtape.scunning.com/). Yale University Press. 1st Edition. 2021.
+
+
+::: {style="font-size: 0.875em;"}
+Volte para [Cronograma](/ "Course schedule") ⏎
+:::

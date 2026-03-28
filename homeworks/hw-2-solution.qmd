@@ -1,0 +1,91 @@
+---
+title: "Lista de Exercícios 1: Inferência Causal e Resultados Potenciais"
+subtitle: "Microeconometria - Soluções"
+author: "Raphael Gouvea (Adaptado)"
+date: last-modified
+format:
+  html:
+    toc: true
+    code-fold: true
+    number-sections: true
+---
+
+## Resultados Potenciais e Efeitos Tratamento
+
+1.  Considere um cenário de avaliação de impacto em que temos interesse em estudar os efeitos de uma intervenção sobre uma variável de resultado.
+
+a.  Defina a variável de resultado $Y_i$ como função da variável indicadora de tratamento $D_i \in \{0,1\}$, utilizando a notação de resultados potenciais.
+
+**Resposta:** Pela notação de resultados potenciais, cada indivíduo $i$ possui dois resultados: $Y_{i}(1)$ (sob tratamento) e $Y_{i}(0)$ (sem tratamento). O resultado observado é dado por:
+
+$$Y_{i}=D_{i}Y_{i}(1)+(1-D_{i})Y_{i}(0)$$
+
+b. Formalize o efeito de tratamento individual, isto é, a diferença entre o resultado potencial sob tratamento e o resultado potencial sob controle para um indivíduo $i$.
+
+
+**Resposta:** O efeito de tratamento individual é definido como $\tau_{i}=Y_{i}(1)-Y_{i}(0)$.
+
+2.  Defina e apresente a formulação matemática dos seguintes conceitos em termos de esperança condicional:
+
+a.  O efeito médio do tratamento (ATE).
+
+**Resposta:** $\text{ATE} = E[Y_1 - Y_0] = E[\tau_i]$
+
+        
+b. O efeito médio do tratamento sobre os tratados (ATT).
+    
+
+**Resposta:** $\text{ATT} = E[Y_1 - Y_0 | D=1]$
+
+      
+c. O efeito médio do tratamento sobre os não tratados (ATU).
+
+
+**Resposta:** $\text{ATU} = E[Y_1 - Y_0 | D=0]$
+
+*Observação:* use expressões como $E[\cdot]$ e $E[\cdot \mid \cdot]$ onde apropriado.
+
+3.  Mostre o que ocorre ao utilizar a diferença entre as médias observadas dos grupos de tratamento ($D_i=1$) e de controle ($D_i=0$) como estimador do efeito do tratamento.
+
+a.  Derive $E[Y_i \mid D_i=1] \;-\; E[Y_i \mid D_i=0]$ e mostre que pode ser decomposto em dois termos: $ATT$ e viés de seleção.
+
+**Resposta:** 
+$$
+\begin{aligned}
+    E[Y_i \mid D_i=1] \;-\; E[Y_i \mid D_i=0] &= \color{red}{E[Y_{1i} \mid D_i = 1]} - E[Y_{0i} \mid D_i = 0] \\
+    &= \color{red}{E[Y_{0i} + \kappa \mid D_i = 1]} - E[Y_{0i} \mid D_i = 0] \\
+    &= \underbrace{\color{red}{\kappa}}_{\color{blue}{\text{Efeito causal médio}}}
+       \color{red}{+} \underbrace{\color{red}{E[Y_{0i} \mid D_i = 1]} - E[Y_{0i} \mid D_i = 0]}_{\color{blue}{\text{Viés de seleção}}}
+\end{aligned}
+$$
+
+4.  A *Lei da Expectativa Total* afirma que, para uma variável de interesse $X$ e uma partição dada por $D_i \in \{0,1\}$, vale: $$E[X] \;=\; \Pr(D_i=1)\,E[X \mid D_i=1] \;+\; \Pr(D_i=0)\,E[X \mid D_i=0].$$
+
+a.  Utilize este resultado para mostrar que o efeito médio do tratamento (ATE) pode ser escrito como: $$ATE = E[Y_i(1) - Y_i(0)] = \Pr(D_i=1)ATT + \Pr(D_i=0) ATU.$$
+
+**Resposta:** Aplicando $X = Y_i(1) - Y_i(0)$ a Lei da Expectativa total, obtemos:
+
+$$
+\begin{aligned}
+E[Y_i(1) - Y_i(0)] =& \Pr(D_i=1)E[Y_i(1) - Y_i(0) \mid D_i=1] + \Pr(D_i=0)E[Y_i(1) - Y_i(0) \mid D_i=0]  \\
+                  ATE  =& \Pr(D_i=1)ATT + \Pr(D_i=0)ATU
+\end{aligned}
+$$
+
+        
+b. Interprete a equação obtida. 
+
+
+**Resposta**: ATE é média ponderada de ATT e ATU, com pesos dados pelas proporções dos grupos de tratamento e controle na amostra.
+
+5.  Com base em (3) e (4), responda:
+
+a.  Em que condição a diferença de médias entre grupos de tratamento e controle coincide exatamente com o efeito médio do tratamento (ATE)?
+
+**Resposta:** São necessárias duas condições para que a diferença de médias entre os grupos identifique o ATE:
+
+         
+i) Os grupos de controle e tramento tenham sido definidos de modo aleatório, de modo que $E[Y_i \mid D_i=1] = E[Y_i \mid D_i=0]$.
+
+ii) Os efeitos tratamentos sejam homogêneos, ou seja, $ATT = ATU$.
+

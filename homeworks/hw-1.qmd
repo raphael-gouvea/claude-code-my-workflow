@@ -1,0 +1,78 @@
+---
+title: "Exercício 1 - AC"
+reference-location: margin
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+
+
+## Data de Entrega: 04/03
+
+### Lembretes
+
+::: callout-important
+## Integridade Acadêmica
+Espera-se integridade absoluta do estudante em todas as atividades acadêmicas. Integridade implica adesão firme a um conjunto de valores, sendo os mais essenciais à comunidade acadêmica baseados no conceito de honestidade em relação ao próprio esforço intelectual e ao dos outros, bem como na busca livre e aberta pelo conhecimento e na discussão em sala de aula. A integridade acadêmica é esperada não apenas em situações formais da disciplina, mas em todos os relacionamentos e interações vinculados ao processo educacional. A entrega de um trabalho por parte de um estudante indica que o trabalho é de sua autoria e toda assistência externa deve ser devidamente reconhecida.
+:::
+
+::: callout-important
+## IA, Programação e o Processo de Aprendizado
+
+Ferramentas de IA generativa (como ChatGPT e GitHub Copilot) tornaram-se parte do ecossistema de programação. No entanto, o uso dessas ferramentas na nossa disciplina deve seguir a lógica de desenvolvimento de competência. Imagine a IA como um estagiário muito rápido, mas ocasionalmente descuidado e sem profundidade teórica. Você é o editor-chefe. Se você não souber como estruturar sua análise e ter conhecimentos gerais sobre sintaxe, você não será capaz de revisar o trabalho da IA. **No final, você é o único responsável por cada linha de código e cada interpretação no seu trabalho.** Se você utilizar IA para auxiliar na programação, você deve declarar isso explicitamente no seu relatório, detalhando como a ferramenta foi utilizada. O uso não declarado será tratado sob a política de integridade acadêmica.
+:::
+
+
+### Instruções iniciais
+
+
+Este exercício deve ser feito em R. Você deve submeter dois arquivos por email (raphael.gouvea@professores.ibmec.edu.br): 
+    
+    1. um arquivo com o código replicável;
+    
+    2. um arquivo pdf com os resultados e sua análise/interpretação. 
+
+O arquivo pdf pode ser elaborado manualmente, ou seja, copiando e colocando os resultados no word (ou software equivalente) e preparando as tabelas de resultado manualmente. Ou você pode aproveitar a oportunidade para aprender [Quarto](https://quarto.org/). `Quarto` é um sistema de publicação técnica e científica de código aberto, de última geração, baseado no Pandoc. Ele funciona como uma evolução do `R Markdown`, permitindo criar documentos dinâmicos, relatórios, apresentações, sites e livros (em HTML, PDF, Word) usando R (e também Python e outras linguagens). Caso queira fazer o exerício utilizando Quarto, assista o vídeo abaixo para uma introdução (o vídeo possui legendas automáticas em português).
+
+{{< video https://www.youtube.com/watch?v=_f3latmOhew >}}
+
+### Descrição da atividade
+
+Nesta atividade, você irá replicar a análise da [Áula Prática: Revisão de Probabilidade e Estatística](labs/lab-1.html) para o caso brasileiro. A base de dados equivalemente à CPS para o Brasil é a `Pesquisa Nacional por Amostra de Domicílios Contínua`. Você deve utilizar os [Microdados da Divulgação Anual](https://www.ibge.gov.br/estatisticas/sociais/saude/17270-pnad-continua.html?=&t=microdados). Você pode escolher dois anos quaisquer para realização da atividade. Consulte o dicionário das variáveis para entender exatamente como elas são construídas e os valores que podem receber. Como você vai ver, há mais de uma opção para variável de rendimentos. Você pode escolher a variável que irá utilizar, mas deixe claro em sua análise suas escolhas. 
+
+Utilize o pacote `PNADcIBGE`para fazer download das informações.
+
+**Observação 1:** A base completa é muito grande e pode sobrecarregar a memória do seu computador. Utilizando o pacote, **importe apenas as variáveis que você irá utilizar** no exercício. 
+
+**Observação 2:** Não se preocupe neste momento com o desenho da pesquisa e os pesos amostrais. Você pode simplesmente baixar os microdados e utilizá-los diretamente (sem os pesos) para suas estimativas. 
+
+Após escolher as variáveis e importá-las para o R, responda às seguintes questões (equivalentes ao exercício E3.1 de Stock e Watson, ver página 139):
+
+a.
+    
+    i. Calcule a média amostral da variável de rendimentos nos dois anos escolhidos.
+    ii. Calcule o desvio-padrão amostral da variável de rendimentos nos dois anos escolhidos.
+    iii. Construa um intervalo de confiança de 95% para a média populacional da variável de rendimentos nos dois anos escolhidos.
+    iv. Construa um intervalo de confiança de 95% para a variação nas médias populacionais da variável de rendimentos nos dois anos escolhidos.
+
+b. Utilizando o IPCA, repita o item (a), mas utilizando as variáveis em valores constantes do ano mais recente. 
+
+c. Se você estivesse interessado na variação do poder de compra dos trabalhadores entre os dois anos escolhidos, utilizaria os resultados do item (a) ou do item (b)? Explique.
+
+d. Utilizando os dados do ano mais recente escolhido:
+
+    i. Construa um intervalo de confiança de 95% para a média da variável de rendimentos dos trabalhadores com ensino médio completo.
+    ii. Construa um intervalo de confiança de 95% para a média da variável de rendimentos dos trabalhadores com diploma universitário.
+    iii. Construa um intervalo de confiança de 95% para a diferença entre as duas médias.
+
+e. Repita o item (d) utilizando os dados do ano mais antigo expressos em valores constantes do ano mais recente.
+
+f. Utilizando estimativas apropriadas, intervalos de confiança e estatísticas de teste, responda às seguintes questões:
+
+    i. Os rendimentos reais (ajustados pela inflação) dos trabalhadores com ensino médio completo aumentaram no período analisado?
+    ii. Os salários reais dos trabalhadores com diploma universitário aumentaram?
+    iii. O diferencial salarial entre trabalhadores com diploma universitário e com ensino médio completo aumentou? Explique.
+
+g. A Tabela 3.1 do livro (página 122) apresenta informações sobre a diferença de rendimentos por gênero entre graduados universitários. Prepare uma tabela semelhante para trabalhadores com ensino médio completo, utilizando os dados dos dois anos selecionados. Há diferenças relevantes entre os resultados para trabalhadores com ensino médio e para graduados universitários?
+

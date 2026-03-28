@@ -1,0 +1,82 @@
+---
+title: "Template_TrabalhoFinal"
+subtitle: "Microeconometria - IBM0288"
+author: "Nome do Aluno"
+fontsize: 12pt
+spacing: double
+geometry: 
+  - top=2cm
+  - bottom=2cm
+  - left=2cm
+  - right=2cm
+format: 
+    pdf:
+      babel-lang: pt
+      toc: false
+      toc-depth: 3
+      number-sections: true
+execute:
+  echo: false
+  warning: false
+  error: false
+---
+
+## Introdução
+
+Apresentar o tema, a pergunta de pesquisa e sua relevância empírica ou teórica.
+
+## Revisão da literatura
+
+Breve revisão de estudos que abordam questões semelhantes; destaque qual lacuna ou hipótese o seu trabalho busca explorar.
+
+Deixarei a seu critério escolher como fazer as referências. Você pode simplesmente listá-las na seção final uma a uma. Outra opção é utilizar um sistema de referências bibtex. Para isso, coloque suas citações em formato bibtex (pode pedir ajuda ao chatgpt) e copie e cole em um arquivo texto chamado references.bib . O arquivo `.bib` deve ser salvo na mesma pasta do seu arquivo Quarto (qmd). (Observação: você pode fazer download do arquivo de exemplo no site do curso na seção "Trabalho Final: Projeto".)
+
+Este é um exemplo de citação [@meyersson_islamic_2014]. Note que ao final do arquivo, as referências serão apresentadas já de modo correto seguindo o estilo definido na parte YAML do arquivo.
+
+Caso seja necessário introduzir uma equação, você pode fazer utilzando latex. Veja o exemplo a seguir:
+
+$$
+Y_i = \beta_0 + \beta_1X_{1i} + u_i
+$$ {#eq-regressao}
+
+
+Você ainda poderá fazer referência a equação @eq-regressao.
+
+Você também pode incluir um gráfico diretamente a partir do código da seguinte forma:
+
+```{r}
+#| fig-cap: "MPG vs horsepower, colored by transmission."
+library(ggplot2)
+mtcars2 <- mtcars
+mtcars2$am <- factor(
+  mtcars$am, labels = c('automatic', 'manual')
+)
+ggplot(mtcars2, aes(hp, mpg, color = am)) +
+  geom_point() + geom_smooth() +
+  theme(legend.position = 'bottom')
+```
+
+Uma tabela pode ser inserida de modo semelhante (veja exemplo abaixo). Como mostrado em sala, é possível construir tabelas de resultado a partir de tabelas geradas pelo pacote modelsummary, dentre outros.
+```{r}
+knitr::kable(
+  mtcars[1:6, 1:6], caption = 'A subset of mtcars.'
+)
+```
+
+## Dados e metodologia
+
+Descrição detalhada da base de dados (fonte, período, variáveis), critérios de tratamento e limpeza, e explicação do método utilizado. Deve incluir a especificação econométrica (ou estatística) principal, com justificativa das variáveis incluídas.
+
+## Resultados
+
+Apresente uma tabela principal com a especificação base e variações que sustentem a interpretação causal dos resultados (por exemplo, inclusão de controles adicionais, efeitos fixos ou diferentes amostras). Inclua também um gráfico que represente visualmente o resultado principal — o tipo de gráfico e o conteúdo devem ser adequados ao método utilizado.
+
+## Dicsussão e limitações
+
+Discuta a robustez dos resultados, possíveis vieses (variável omitida, endogeneidade, erros de medida, seleção) e como suas escolhas ajudam a defender a interpretação causal.
+
+## Conclusões
+
+Retome a pergunta de pesquisa e apresente a resposta com base nos resultados obtidos. Indique limitações e possíveis extensões.
+
+## Referências

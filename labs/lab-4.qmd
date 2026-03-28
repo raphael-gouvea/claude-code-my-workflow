@@ -1,0 +1,52 @@
+---
+title: "Aula Prática - Dados em Painel"
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+
+
+## Exercício E10.2 Stock e Watson (4a Edição)
+
+Os cidadãos demandam mais democracia e liberdade política à medida que sua renda cresce? Ou seja, a democracia é um bem normal? Faça download do arquivo de dados [Income_Democracy](/labs/income_democracy/income_democracy.xlsx), que contém um conjunto de dados em painel de 195 países para os anos 1960, 1965, ..., 2000. Uma descrição detalhada está disponível em [Income_Democracy_Description](/labs/income_democracy/Income_Democracy_Description.pdf).[^1] O conjunto de dados contém um índice de liberdade política/democracia para cada país em cada ano, juntamente com dados sobre a renda de cada país e diversas variáveis de controle demográficas. (A renda e os controles demográficos estão defasados em cinco anos em relação ao índice de democracia, a fim de permitir que a democracia se ajuste a mudanças nessas variáveis.)
+
+**a.** O conjunto de dados é um painel balanceado? Explique.
+
+**b.** O índice de liberdade política/democracia é denominado `Dem_ind`.
+
+   i. Quais são os valores mínimo e máximo de `Dem_ind` no conjunto de dados? Quais são a média e o desvio padrão de `Dem_ind`? Quais são os percentis 10, 25, 50, 75 e 90 de sua distribuição?
+
+   ii. Qual é o valor de `Dem_ind` para os Estados Unidos no ano 2000? E sua média ao longo de todos os anos do conjunto de dados?
+
+   iii. Qual é o valor de `Dem_ind` para a Líbia no ano 2000? E sua média ao longo de todos os anos do conjunto de dados?
+
+   iv. Liste cinco países com valor médio de `Dem_ind` superior a 0,95; inferior a 0,10; e entre 0,3 e 0,7.
+
+**c.** O logaritmo da renda per capita é denominado `Log_GDPPC`. Regresse `Dem_ind` em `Log_GDPPC`. Utilize erros padrão clusterizados por país.
+
+   i. Qual é a magnitude do coeficiente estimado de `Log_GDPPC`? O coeficiente é estatisticamente significativo?
+
+   ii. Se a renda per capita de um país aumentar 20%, em quanto se prevê que `Dem_ind` aumentará? Qual é o intervalo de confiança de 95% para essa previsão? O aumento previsto em `Dem_ind` é grande ou pequeno? (Explique o que você entende por grande ou pequeno.)
+
+   iii. Por que é importante utilizar erros padrão clusterizados nessa regressão? Os resultados mudam se você não utilizar erros padrão clusterizados?
+
+**d.**
+
+   i. Sugira uma variável que varie entre países, mas que plausívelmente varie pouco — ou nada — ao longo do tempo e que possa causar viés de variável omitida na regressão de (c).
+
+   ii. Estime a regressão de (c) permitindo efeitos fixos por país. Como suas respostas a (c)(i) e (c)(ii) se alteram?
+
+   iii. Exclua os dados do Azerbaijão e reestime a regressão. Os resultados mudam? Por quê?
+
+   iv. Sugira uma variável que varie ao longo do tempo, mas que plausívelmente varie pouco — ou nada — entre países e que possa causar viés de variável omitida na regressão de (c).
+
+   v. Estime a regressão de (c) permitindo efeitos fixos de tempo e de país. Como suas respostas a (c)(i) e (c)(ii) se alteram?
+
+   vi. Existem controles demográficos adicionais no conjunto de dados. Essas variáveis devem ser incluídas na regressão? Se sim, como os resultados mudam quando são incluídas?
+
+**e.** Com base em sua análise, quais conclusões você tira sobre os efeitos da renda sobre a democracia?
+
+---
+
+[^1]: Esses dados foram fornecidos por Daron Acemoglu do M.I.T. e foram utilizados no artigo com Simon Johnson, James Robinson e Pierre Yared, "Income and Democracy", *American Economic Review*, 2008, 98:3, 808–842.

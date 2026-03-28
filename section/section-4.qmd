@@ -1,0 +1,42 @@
+---
+title: "Seção 4"
+subtitle: "Dados em Painel"
+---
+
+
+::: callout-important
+O uso de celulares e computadores durante as aulas expositivas não é permitido.
+:::
+
+## Preparação {#prepare}
+
+### Aula 7: Dados em painel: efeitos fixos
+
+📖 Leituras principais:
+
+Seções 10.1 a 10.3 de Stock e Watson. [Introduction to econometrics](https://www.sea-stat.com/wp-content/uploads/2020/08/James-H.-Stock-Mark-W.-Watson-Introduction-to-Econometrics-Global-Edition-Pearson-Education-Limited-2020.pdf). 
+
+### Aula 8: Dados em painel: efeitos fixos de tempo
+
+📖 Leituras principais:
+
+Seções 10.4 a 10.7 de Stock e Watson. [Introduction to econometrics](https://www.sea-stat.com/wp-content/uploads/2020/08/James-H.-Stock-Mark-W.-Watson-Introduction-to-Econometrics-Global-Edition-Pearson-Education-Limited-2020.pdf).
+
+**Observação** A  1^a^ Edição de Stock e Watson não contém material sobre desvios-padrões *"clusterizados"* discutido na seção 10.5 do livro da 5a Edição. 
+
+
+## Conteúdo das aulas
+
+💻 [Aula 7 - Dados em painel: efeitos fixos](/slides/lec-7.html)
+
+💻 [Aula 8 - Dados em painel: efeitos fixos de tempo](/slides/lec-8.html)
+
+
+⌨️ [Aula Prática](/labs/lab-4.html)
+
+
+
+::: {style="font-size: 0.875em;"}
+Volte para [Cronograma](/ "Course schedule") ⏎
+:::
+
